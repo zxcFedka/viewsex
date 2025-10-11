@@ -222,5 +222,4 @@ local module = {
 }
 table.freeze(module)
 
-
-return { 1, 1 }
+return module
