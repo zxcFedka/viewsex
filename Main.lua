@@ -35,7 +35,8 @@ local framework = {
 
 local canUseInspect = true
 
-local viewmodelFolder = loadstring(game:HttpGet("")) -- возвращает список с моделями
+local viewmodels = loadstring(game:HttpGet(
+"https://raw.githubusercontent.com/zxcFedka/viewsex/refs/heads/main/Viewmodels.lua"))                                            -- возвращает список с моделями
 
 function loadAnimations(viewmodel)
     local model = viewmodel.Model
@@ -90,7 +91,8 @@ function deepcopy(orig, seen)
 end
 
 function loadSlot(Item) --Item это string
-    for i, v in viewmodelFolder do
+    print(1)
+    for i, v in viewmodels do
         if i == Item then
             -- вместо этого будет require, который вернет список других моделей({require, require...})
             -- проблема в том что создавая переменные, мы храним в них данные модуля, которые потом перезаписываются
@@ -178,6 +180,7 @@ end
 
 UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Binds.Show then
+        print("Pressed")
         if framework.viewmodel.Model ~= nil then
             framework.viewmodel.Model:Destroy()
             framework.viewmodel.Model = nil
