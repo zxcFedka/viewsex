@@ -8,12 +8,12 @@ local RunService = game:GetService("RunService")
 local camera = game.Workspace.CurrentCamera
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local SaveFolder = ReplicatedStorage:WaitForChild("Save") or createfolder()
-
-function createfolder()
+local function createfolder()
 	local a= Instance.new("Folder", ReplicatedStorage)
 	a.Name = "Save"
 end
+
+local SaveFolder = createfolder()
 
 local AnimatorModule = function()
 	local AnimationTrackModule = function()
@@ -271,6 +271,7 @@ local AnimatorModule = function()
 
 	function Animator:LoadAnimation(animData)
 		-- Создаём новый CustomTrack, привязанный к этому Animator
+        print(animData, "asdasd")
 		local track = AnimationTrackModule().new(self, animData)
 		return track
 	end
@@ -402,14 +403,21 @@ function loadAnimations(viewmodel)
 		local AnimatorModuleS = AnimatorModule().new(model)
 		for name, Animation in viewmodel.Animations do
 
-			print(name, Animation)
+            -- print(name,Animation)
+
 			if name == "Idle" then
+                
+                for i,v in Animation do
+                
+                end
+
 				viewmodel.Animations.Idle = AnimatorModuleS:LoadAnimation(Animation)
 			end
 
 			if name == "Inspects" then
 
 				for i,v in Animation do
+                print(i,v)
 					viewmodel.Animations.Inspects[i] = AnimatorModuleS:LoadAnimation(v)
 				end
 			end
@@ -468,33 +476,45 @@ end
 
 function Initialization()
 	print("Start intializtion...")
-	
+
 	local viewmodels = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcFedka/viewsex/refs/heads/main/Viewmodels.lua"))()
-	
-	print(viewmodels)
-	
+
+	-- print(viewmodels)
+
 	for animation, info in viewmodels do
-		print(info)
+		-- print(info)
 		local Template = {
-			Module = info[1],
+			Module = info,
 			Animations = {},
 			Model = nil,
 			Show = Enum.KeyCode.One
 		}
-		
+
 		framework.viewmodels[animation] = Template
-		
+
 		--table.insert(framework.viewmodels, Template)
 	end
-	
-	print(framework)
+
+	for i,v in framework.viewmodels do
+		for a,b in v do
+			if a == "Animations" then
+				for c,d in b do
+					-- print(c,d)
+				end
+			end
+		end
+	end
 
 	for viewmodel,info in framework.viewmodels do
 		loadModel(info)
 
+		warn("Idle")
+
 		-- НОВОЕ: Запускаем Idle после загрузки анимации
 		if info.Animations.Idle then
 			info.Animations.Idle:Play(0.2, 1) -- Play(fadeTime, weight)
+
+			warn("Idle2")
 		end
 	end
 
