@@ -1,3 +1,5 @@
+print("asd")
+
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
@@ -36,7 +38,7 @@ local framework = {
 local canUseInspect = true
 
 local viewmodels = loadstring(game:HttpGet(
-"https://raw.githubusercontent.com/zxcFedka/viewsex/refs/heads/main/Viewmodels.lua"))                                            -- возвращает список с моделями
+    "https://raw.githubusercontent.com/zxcFedka/viewsex/refs/heads/main/Viewmodels.lua")) -- возвращает список с моделями
 
 function loadAnimations(viewmodel)
     local model = viewmodel.Model
@@ -92,7 +94,7 @@ end
 
 function loadSlot(Item) --Item это string
     print(1)
-    for i, v in viewmodels do
+    for i, v in viewmodels() do
         if i == Item then
             -- вместо этого будет require, который вернет список других моделей({require, require...})
             -- проблема в том что создавая переменные, мы храним в них данные модуля, которые потом перезаписываются

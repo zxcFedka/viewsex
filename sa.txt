@@ -1,0 +1,565 @@
+warn("Start")
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local camera = game.Workspace.CurrentCamera
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local SaveFolder = ReplicatedStorage:WaitForChild("Save") or createfolder()
+
+function createfolder()
+	local a= Instance.new("Folder", ReplicatedStorage)
+	a.Name = "Save"
+end
+
+local AnimatorModule = function()
+	local AnimationTrackModule = function()
+		local SignalModule = function()
+			-- Signal.lua
+			local Signal = {}
+			Signal.__index = Signal
+
+			function Signal.new()
+				local self = setmetatable({}, Signal)
+				self._connections = {}
+				return self
+			end
+
+			function Signal:Connect(callback)
+				local conn = { callback = callback, connected = true }
+				table.insert(self._connections, conn)
+				return {
+					Disconnect = function()
+						conn.connected = false
+					end
+				}
+			end
+
+			function Signal:Fire(...)
+				for _, conn in ipairs(self._connections) do
+					if conn.connected then
+						conn.callback(...)
+					end
+				end
+			end
+
+			return Signal
+
+		end
+
+		local AnimationTrack = {}
+		AnimationTrack.__index = AnimationTrack
+
+		local function findSpan(keys, t)
+			local n = #keys
+			if n == 0 then return nil end
+			if t <= keys[1].t then return 1, 1, 0 end
+			if t >= keys[n].t then return n, n, 0 end
+
+			-- Бинарный поиск для быстрого нахождения интервала (O(log N))
+			local low = 1
+			local high = n
+			local idx = 1
+
+			while low <= high do
+				local mid = math.floor((low + high) / 2)
+				if keys[mid].t <= t then
+					idx = mid
+					low = mid + 1
+				else
+					high = mid - 1
+				end
+			end
+
+			local k1 = keys[idx]
+			local k2 = keys[idx + 1]
+
+			if k2 then
+				local duration = k2.t - k1.t
+				local alpha = (t - k1.t) / math.max(1e-6, duration)
+				return idx, idx + 1, alpha
+			else
+				-- Это должен быть последний кадр (уже проверено выше, но для надежности)
+				return n, n, 0
+			end
+		end
+
+		local function lerpCFrame(a, b, alpha)
+			return a:Lerp(b, alpha)
+		end
+
+		function AnimationTrack.new(animator, animData)
+			local self = setmetatable({}, AnimationTrack)
+			self._animator = animator
+			self._data = animData
+
+			-- Публичные свойства
+			self.Length = animData.Length or 0
+			self.Looped = animData.Looped or false
+			self.IsPlaying = false
+			self.TimePosition = 0
+			self.Speed = 1
+
+			-- Внутренние
+			self._weight = 1 -- вес трека (для blend)
+			self._fadeAlpha = 0 -- текущий fade (0..1)
+			self._fadeTarget = 0.1
+			self._fadeTime = 0
+			self._fadeMode = nil -- "in" или "out"
+
+			-- События
+			self.Stopped = SignalModule().new()
+			self.Ended = SignalModule().new()
+
+			return self
+		end
+
+		function AnimationTrack:Play(fadeTime, weight, speed)
+			if self.IsPlaying then
+				self.TimePosition = 0
+				self.Speed = speed or self.Speed
+				self._weight = weight or self._weight
+				self._fadeTarget = fadeTime or self._fadeTarget
+				self._fadeTime = 0
+				self._fadeMode = "in" -- <--- Убедитесь, что fadeMode сбрасывается
+				self._fadeAlpha = 0
+				return
+			end
+
+			self.IsPlaying = true
+			self.TimePosition = 0
+			self.Speed = speed or 1
+			self._weight = weight or 1
+			self._fadeTarget = fadeTime or 0.1
+			self._fadeTime = 0
+			self._fadeMode = "in" -- <--- Убедитесь, что fadeMode сбрасывается
+			self._fadeAlpha = 0
+
+			self._animator:_registerTrack(self)
+		end
+
+		function AnimationTrack:Stop(fadeTime)
+			if not self.IsPlaying then return end
+
+			self._fadeTarget = fadeTime or 0.1
+			self._fadeTime = 0
+			self._fadeMode = "out"
+			-- Не убираем сразу, даём fade-out отработать
+		end
+
+		function AnimationTrack:Pause()
+			self.IsPlaying = false
+		end
+
+		function AnimationTrack:Resume()
+			if not self.IsPlaying then
+				self.IsPlaying = true
+				self._animator:_registerTrack(self)
+			end
+		end
+
+		function AnimationTrack:AdjustSpeed(speed)
+			self.Speed = speed
+		end
+
+		function AnimationTrack:AdjustWeight(weight)
+			self._weight = weight
+		end
+
+		function AnimationTrack:_update(dt)
+			if not self.IsPlaying then return end
+
+			-- Обновляем fade
+			self._fadeTime += dt
+			if self._fadeMode == "in" then
+				self._fadeAlpha = math.min(self._fadeTime / self._fadeTarget, 1)
+			elseif self._fadeMode == "out" then
+				self._fadeAlpha = math.max(1 - self._fadeTime / self._fadeTarget, 0)
+				if self._fadeAlpha <= 0 then
+					self:_finish()
+					return
+				end
+				-- КРИТИЧНОЕ ИСПРАВЛЕНИЕ:
+				-- Если мы в режиме fade-out, мы не хотим зацикливать анимацию по времени.
+			else
+				self._fadeAlpha = 1
+			end
+
+			-- Обновляем время
+			self.TimePosition += dt * self.Speed
+
+			-- ИСПРАВЛЕНИЕ ЛОГИКИ ЗАЦИКЛИВАНИЯ:
+			-- Если анимация в режиме fade-out, она должна завершиться только через self:_finish() выше.
+			-- Если она не в режиме fade-out, и зациклена, то зацикливаем.
+			if self.TimePosition >= self.Length then
+				if self.Looped and self._fadeMode ~= "out" then -- <-- Проверяем, что не в режиме fade-out
+					self.TimePosition = self.TimePosition % self.Length
+				else
+					self.IsPlaying = false
+					self.Ended:Fire()
+					self:_finish()
+				end
+			end
+		end
+
+		function AnimationTrack:_getCurrentPoses(out)
+			out = out or {}
+			table.clear(out)
+			for name, keys in pairs(self._data.Tracks or {}) do
+				local i1, i2, a = findSpan(keys, self.TimePosition)
+				if i1 then
+					local cf = (i1 == i2) and keys[i1].cf or keys[i1].cf:Lerp(keys[i2].cf, a)
+					out[name] = cf
+				end
+			end
+			return out
+		end
+		function AnimationTrack:_finish()
+			self._animator:_unregisterTrack(self)
+			self.IsPlaying = false
+			self.Stopped:Fire()
+		end
+
+		return AnimationTrack
+	end
+
+	local Animator = {}
+	Animator.__index = Animator
+
+	local function buildRigMaps(model)
+		local motors = {}
+		local bones = {}
+		for _, d in ipairs(model:GetDescendants()) do
+			if d:IsA("Motor6D") and d.Part1 then
+				motors[d.Part1.Name] = d
+			elseif d:IsA("Bone") then
+				bones[d.Name] = d
+			end
+		end
+		return motors, bones
+	end
+
+	function Animator.new(model)
+		local self = setmetatable({}, Animator)
+		self.model = model
+		self.motors, self.bones = buildRigMaps(model)
+		self._activeTracks = {} -- список активных треков
+		self._conn = nil
+		self._blendedPoses = {}        -- [name] = {weight, cf}
+		self._posesScratch = {}        -- переиспользуемая карта поз
+		self._lastApplied = {} -- set по имени сустава
+
+		local nowApplied = {}
+		for name,_ in pairs(self._blendedPoses) do
+			nowApplied[name] = true
+		end
+
+		-- Сбросить только те, что были ранее, но их нет сейчас
+		for name,_ in pairs(self._lastApplied) do
+			if not nowApplied[name] then
+				local m = self.motors[name]; if m then m.Transform = CFrame.identity end
+				local b = self.bones[name];  if b then b.Transform = CFrame.identity end
+			end
+		end
+
+		self._lastApplied = nowApplied
+		return self
+	end
+
+	function Animator:LoadAnimation(animData)
+		-- Создаём новый CustomTrack, привязанный к этому Animator
+		local track = AnimationTrackModule().new(self, animData)
+		return track
+	end
+
+	function Animator:_registerTrack(track)
+		table.insert(self._activeTracks, track)
+		if not self._conn then
+			self:_startUpdateLoop()
+		end
+	end
+
+	function Animator:_unregisterTrack(track)
+		for i, t in ipairs(self._activeTracks) do
+			if t == track then
+				table.remove(self._activeTracks, i)
+				break
+			end
+		end
+		if #self._activeTracks == 0 and self._conn then
+			self._conn:Disconnect()
+			self._conn = nil
+		end
+	end
+
+	function Animator:_startUpdateLoop()
+		self._conn = RunService.RenderStepped:Connect(function(dt)
+			-- очистка без аллокаций
+			table.clear(self._blendedPoses)
+			table.clear(self._posesScratch)
+
+			for _, track in ipairs(self._activeTracks) do
+				track:_update(dt)
+				local poses = track:_getCurrentPoses(self._posesScratch) -- см. ниже
+				for name, cf in pairs(poses) do
+					local bp = self._blendedPoses[name]
+					if not bp then
+						bp = {weight = 0, cf = CFrame.identity}
+						self._blendedPoses[name] = bp
+					end
+					local w = track._weight * track._fadeAlpha
+					local newTotal = bp.weight + w
+					if newTotal > 0 then
+						-- вперёд-смешивание без создания временных CFrame
+						bp.cf = bp.cf:Lerp(cf, w / newTotal)
+						bp.weight = newTotal
+					end
+				end
+			end
+
+			-- Применяем только то, что действительно изменилось
+			for name, data in pairs(self._blendedPoses) do
+				local b = self.bones[name]
+				if b then
+					b.Transform = data.cf
+				else
+					local m = self.motors[name]
+					if m then
+						m.Transform = data.cf
+					end
+				end
+			end
+		end)
+	end
+
+	return Animator
+end
+
+local UIS = game:GetService("UserInputService")
+
+local InspectBind = Enum.KeyCode.F
+
+local framework = {
+
+	viewmodels = {
+	};
+	viewmodel = nil;
+}
+
+--[[
+	Три состояния:
+	Idle [loop]
+	Inspect: after(idle)
+	Attack: after(idle)
+--]]
+
+local canUseInspect = true
+
+function loadSlot(viewmodel)
+
+	local needToHide = viewmodel == nil
+
+	if needToHide then
+		framework.viewmodel.Model.Parent = SaveFolder
+		framework.viewmodel = nil
+	else
+		if framework.viewmodel ~= nil then
+			framework.viewmodel.Model.Parent = SaveFolder -- Перемещаем пред. модель в replicatedStorage
+		end
+
+		framework.viewmodel = viewmodel
+		--viewmodel.Animations.Idle:Play()
+		viewmodel.Model.Parent = camera
+	end
+end
+
+function loadModel(viewmodel)
+	local cloneModule = deepcopy(viewmodel.Module)
+
+	local Model = cloneModule.Model()
+	local Animations = cloneModule.Animations
+
+	local copyModel = Model:Clone()
+
+	print(Animations)
+
+	viewmodel.Model = copyModel
+	viewmodel.Animations = Animations
+
+	local success = loadAnimations(viewmodel)
+	copyModel.Parent = SaveFolder
+
+	return copyModel
+end
+
+function loadAnimations(viewmodel)
+	local model = viewmodel.Model
+
+	if model then
+		local AnimatorModuleS = AnimatorModule().new(model)
+		for name, Animation in viewmodel.Animations do
+
+			print(name, Animation)
+			if name == "Idle" then
+				viewmodel.Animations.Idle = AnimatorModuleS:LoadAnimation(Animation)
+			end
+
+			if name == "Inspects" then
+
+				for i,v in Animation do
+					viewmodel.Animations.Inspects[i] = AnimatorModuleS:LoadAnimation(v)
+				end
+			end
+		end
+	else
+		return false
+	end
+
+	return viewmodel.Animations
+end
+
+function deepcopy(orig, seen)
+	seen = seen or {}
+	if type(orig) ~= "table" then return orig end
+	if seen[orig] then return seen[orig] end
+
+	local copy = {}
+	seen[orig] = copy
+	for k, v in pairs(orig) do
+		copy[deepcopy(k, seen)] = deepcopy(v, seen)
+	end
+	return copy
+end
+
+local function getShirtTextureId()
+	local shirt = character:FindFirstChildOfClass("Shirt")
+	if shirt then
+		return shirt.ShirtTemplate
+	end
+	return nil
+end
+
+local ShirtUpdated = false
+
+local function updateViewModelShirt(textureId, viewModel)
+	for _, arm in ipairs(viewModel:GetChildren()) do
+		-- Убеждаемся, что это MeshPart (наши новые руки)
+		if arm:IsA("MeshPart") and arm.Name == "Right Arm" then
+			-- Удаляем старую рубашку, если она есть
+			local oldShirt = arm:FindFirstChildOfClass("Shirt")
+			if oldShirt then
+				oldShirt:Destroy()
+			end
+
+			-- Если есть новая текстура, создаем новый объект Shirt
+			if textureId then
+				local newShirt = Instance.new("Shirt")
+				newShirt.ShirtTemplate = textureId
+				newShirt.Parent = arm -- <--- Вот и вся магия!
+			end
+		end
+	end
+
+	ShirtUpdated = true
+end
+
+function Initialization()
+	print("Start intializtion...")
+	
+	local viewmodels = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcFedka/viewsex/refs/heads/main/Viewmodels.lua"))()
+	
+	print(viewmodels)
+	
+	for animation, info in viewmodels do
+		print(info)
+		local Template = {
+			Module = info[1],
+			Animations = {},
+			Model = nil,
+			Show = Enum.KeyCode.One
+		}
+		
+		framework.viewmodels[animation] = Template
+		
+		--table.insert(framework.viewmodels, Template)
+	end
+	
+	print(framework)
+
+	for viewmodel,info in framework.viewmodels do
+		loadModel(info)
+
+		-- НОВОЕ: Запускаем Idle после загрузки анимации
+		if info.Animations.Idle then
+			info.Animations.Idle:Play(0.2, 1) -- Play(fadeTime, weight)
+		end
+	end
+
+	print("End intializtion...")
+end
+
+Initialization()
+
+local inspectConn
+
+function RandomInspect()
+	canUseInspect = false
+	local Idle = framework.viewmodel.Animations.Idle
+	local Inspect = framework.viewmodel.Animations.Inspects[1]
+
+	-- Мягко “приглушаем” Idle, не перезапуская, если он уже играет
+	if Idle.IsPlaying then
+		Idle:AdjustWeight(0.0)
+	else
+		Idle:Play(0.1, 1, 1)
+		Idle:AdjustWeight(0.0)
+	end
+
+	-- Переподключаем обработчик, чтобы не копить соединения
+	if inspectConn then
+		inspectConn:Disconnect()
+		inspectConn = nil
+	end
+
+	-- Дожидаемся фактического завершения влияния клипа
+	inspectConn = Inspect.Ended:Connect(function()
+		Idle:AdjustWeight(1.0)
+		canUseInspect = true
+	end)
+
+	Inspect:Play(0.1, 1, 1)
+end
+
+RunService.RenderStepped:Connect(function()
+	if framework.viewmodel then
+		framework.viewmodel.Model:SetPrimaryPartCFrame(camera.CFrame)
+
+		--if not ShirtUpdated then
+		--	updateViewModelShirt(getShirtTextureId(), framework.viewmodel.Model)
+		--end
+	end
+end)
+
+UIS.InputBegan:Connect(function(input)
+	for viewmodels,viewmodel in framework.viewmodels do
+		if input.KeyCode == viewmodel.Show then
+			if framework.viewmodel ~= nil then
+				ShirtUpdated = false
+
+				loadSlot(nil)
+			else
+				loadSlot(viewmodel)
+			end
+		end
+	end
+
+	if input.KeyCode == InspectBind then
+		if framework.viewmodel and canUseInspect then
+			RandomInspect()
+		end
+	end
+end)
+
