@@ -97,9 +97,21 @@
                                     if (l == "\5") then break end
                                     local e = n.byte(t(0x01))
                                     local e = t(e)
-                                    if l == "\2" then e = a.JxsoAVgw(e) elseif l == "\3" then e = e ~= "\0" elseif l == "\6" then f[e] = function(
-                                            e, l) return y(8, nil, y, l, e) end elseif l == "\4" then e = f[e] elseif l == "\0" then e =
-                                        f[e][t(n.byte(t(0x01)))]; end
+                                    if l == "\2" then
+                                        e = a.JxsoAVgw(e)
+                                    elseif l == "\3" then
+                                        e = e ~= "\0"
+                                    elseif l == "\6" then
+                                        f[e] = function(
+                                            e, l)
+                                            return y(8, nil, y, l, e)
+                                        end
+                                    elseif l == "\4" then
+                                        e = f[e]
+                                    elseif l == "\0" then
+                                        e =
+                                            f[e][t(n.byte(t(0x01)))];
+                                    end
                                     local l = t(0x08)
                                     a[l] = e
                                 end
@@ -144,38 +156,49 @@
             t = t + 0x01
             if t % 0x02 == 0x00 then
                 t = 0x00
-                a.Hj_njIAK(l[0x01], (d((((l[0x03][l[0x02][0x00]] or 0x00) * 0x10) + (l[0x03][l[0x02][0x01]] or 0x00) + s) % 0x100))); s =
-                y + s;
+                a.Hj_njIAK(l[0x01],
+                    (d((((l[0x03][l[0x02][0x00]] or 0x00) * 0x10) + (l[0x03][l[0x02][0x01]] or 0x00) + s) % 0x100))); s =
+                    y + s;
             end
         end
         return a.ZmqZVacE(l[0x01])
     end); s(o(41, ">m?_{<JytXk2aod-oa")); s(o(37,
         "%eVr_Jvmj7t(pxP=x((pz_P1(7j(v(r=(m=VxP(ej=vprv=txtptj7m6_pxv(V=jpv7=jJv<rtY7=eprtKJprxeptjjmpxttmpJprxP=Prxrt(JxJxVmFpmpJxtJjeJtVpfpPfJ77pv(J7Vr>rPVt_7mvpVJeVxxpx_PVxme_2VP=xmJ(mjtvvJ_Vm=px(7Vm_Jj_j=J==vPJe7rvA_teP=ex(tr7eJ7rJetPPpxtpvermV_VO=_(v_#eP_jrVO(=mpxt(_mJxVp=pp7pmtrm=Vxp(tv=_(77pjVr7Vr)_Pbt77tjJ_jpr7x()(7m__pV_r5=ppN(mVP9xJ_Vt/7PJ(P7HmR__V(x(p_7tjt_=_(=v7#my(tjVJP_rem7rxx(ejPJtrmet=((ejrm=v=Vr=pp(vv_rjxverPFtPmpt(eJtv0eJ<7PVx_m=ev=VrjeJPmpmtjjwv#etP7Pm7PjJ_xP(pjeixx(=7rvpJjCV=_pJ7tmrJPJ7re7mmv(tj7mm_v(P=tx((77_mVVt=(xV(mpevx_CV=(j")); local e = (-2229 + (function()
         local s, l = 0, 1; (function(l, e, t, f) e(t(t, e, l, f), e(f, t, e and l, t), l(f, e, l, e), e(e, e, l, e)) end)(
-        function(t, e, n, f)
-            if s > 292 then return e end
-            s = s + 1
-            l = (l + 990) % 49471
-            if (l % 1862) >= 931 then
-                l = (l + 663) % 41190
-                return f
-            else return e(t(e, t, n, t), e(n and t, e, n, e), e(t and f, e, t, f) and f(t, t, e, f), n(e, e, n, e)) end
-            return n(t(t, f, e and f, e and f), e(e, e, t, e), e(t, n, e, n), n(f, n and e, e, f and t))
-        end,
+            function(t, e, n, f)
+                if s > 292 then return e end
+                s = s + 1
+                l = (l + 990) % 49471
+                if (l % 1862) >= 931 then
+                    l = (l + 663) % 41190
+                    return f
+                else
+                    return e(t(e, t, n, t), e(n and t, e, n, e), e(t and f, e, t, f) and f(t, t, e, f), n(e, e, n, e))
+                end
+                return n(t(t, f, e and f, e and f), e(e, e, t, e), e(t, n, e, n), n(f, n and e, e, f and t))
+            end,
             function(n, t, f, e)
                 if s > 428 then return f end
                 s = s + 1
                 l = (l + 1019) % 32758
-                if (l % 1790) > 895 then return e(e(e, e, e, t) and f(f, n, t and t, f), t(t, e, e, e),
-                        e(t, e, n, t) and n(t, f, e, t), f(f and f, n and t, n, f)) else return n end
+                if (l % 1790) > 895 then
+                    return e(e(e, e, e, t) and f(f, n, t and t, f), t(t, e, e, e),
+                        e(t, e, n, t) and n(t, f, e, t), f(f and f, n and t, n, f))
+                else
+                    return n
+                end
                 return e
             end,
             function(n, f, t, e)
                 if s > 136 then return n end
                 s = s + 1
                 l = (l + 846) % 5894
-                if (l % 886) > 443 then return t(t(f, f and t, f, e), t(f, e, e, f), e(n, e, e, f and e) and n(e, t, f, e),
-                        t(f, t, t, n)) else return e end
+                if (l % 886) > 443 then
+                    return t(t(f, f and t, f, e), t(f, e, e, f), e(n, e, e, f and e) and n(e, t, f, e),
+                        t(f, t, t, n))
+                else
+                    return e
+                end
                 return t
             end,
             function(f, t, e, n)
@@ -185,7 +208,9 @@
                 if (l % 866) > 433 then
                     l = (l - 885) % 5935
                     return e
-                else return f(f(e, t, e, t), e(e, t, f, f and n), n(f, t, t, e), f(e, t, e, n)) end
+                else
+                    return f(f(e, t, e, t), e(e, t, f, f and n), n(f, t, t, e), f(e, t, e, n))
+                end
                 return f(f(e and e, n, f and f, e), e(t, n and t, n, e), e(t, n, t and e, t) and n(t and f, f, e, f),
                     t(e, e, t, e and n))
             end)
@@ -206,11 +231,17 @@
             local l, t = a.hkDgYjZA(h, e(1, 3), e(5, 6) + 2); e(2); return (t * 256) + l;
         end; local u = true; local u = 0
         local function _()
-            local f = l(); local e = l(); local s = 1; local f = (t(e, 1, 20) * (2 ^ 32)) + f; local l = t(e, 21, 31); local e = ((-1) ^ t(e, 32)); if (l == 0) then if (f == u) then return
-                    e * 0; else
+            local f = l(); local e = l(); local s = 1; local f = (t(e, 1, 20) * (2 ^ 32)) + f; local l = t(e, 21, 31); local e = ((-1) ^ t(e, 32)); if (l == 0) then
+                if (f == u) then
+                    return
+                        e * 0;
+                else
                     l = 1; s = 0;
-                end; elseif (l == 2047) then return (f == 0) and (e * (1 / 0)) or (e * (0 / 0)); end; return a.jnJQZoAp(
-            e, l - 1023) * (s + (f / (2 ^ 52)));
+                end;
+            elseif (l == 2047) then
+                return (f == 0) and (e * (1 / 0)) or (e * (0 / 0));
+            end; return a.jnJQZoAp(
+                e, l - 1023) * (s + (f / (2 ^ 52)));
         end; local k = l; local function p(l)
             local t; if (not l) then
                 l = k(); if (l == 0) then return ''; end;
@@ -224,15 +255,23 @@
             local e = {}; local u = {}; local r = {}; local h = { u, r, nil, e }; local e = l()
             local d = {}
             for f = 1, e do
-                local t = o(); local l; if (t == 2) then l = (o() ~= #{}); elseif (t == 3) then
+                local t = o(); local l; if (t == 2) then
+                    l = (o() ~= #{});
+                elseif (t == 3) then
                     local e = _(); if k and a.lSkeCUEZ(a.sHVQfPqA(e), '.(\48+)$') then e = a.OEAKzKCW(e); end
                     l = e;
-                elseif (t == 0) then l = p(); end; d[f] = l;
+                elseif (t == 0) then
+                    l = p();
+                end; d[f] = l;
             end; h[3] = o(); for r = 1, l() do
                 local e = o(); if (t(e, 1, 1) == 0) then
                     local y = t(e, 2, 3); local o = t(e, 4, 6); local e = { n(), n(), nil, nil }; if (y == 0) then
                         e[s] = n(); e[c] = n();
-                    elseif (y == #{ 1 }) then e[s] = l(); elseif (y == b[2]) then e[s] = l() - (2 ^ 16) elseif (y == b[3]) then
+                    elseif (y == #{ 1 }) then
+                        e[s] = l();
+                    elseif (y == b[2]) then
+                        e[s] = l() - (2 ^ 16)
+                    elseif (y == b[3]) then
                         e[s] = l() - (2 ^ 16)
                         e[c] = n();
                     end; if (t(o, 1, 1) == 1) then e[f] = d[e[f]] end
@@ -247,34 +286,60 @@
         local function p(k, r, o)
             local function fe(...)
                 local n, _, b, te, u, l, h, m, g, z, j, t; local e = 0; while -1 < e do
-                    if 3 <= e then if 5 <= e then if 2 ~= e then for l = 10, 74 do
+                    if 3 <= e then
+                        if 5 <= e then
+                            if 2 ~= e then
+                                for l = 10, 74 do
                                     if e ~= 6 then
                                         t = y(7); break;
                                     end; e = -2; break;
-                                end; else e = -2; end else if -1 < e then for l = 49, 73 do
+                                end;
+                            else
+                                e = -2;
+                            end
+                        else
+                            if -1 < e then
+                                for l = 49, 73 do
                                     if 3 < e then
                                         z = a.CZPJHXxu('#', ...) - 1; j = {}; break;
                                     end; m = {}; g = { ... }; break;
-                                end; else
+                                end;
+                            else
                                 m = {}; g = { ... };
-                            end end else if e > 0 then if e > 0 then repeat
+                            end
+                        end
+                    else
+                        if e > 0 then
+                            if e > 0 then
+                                repeat
                                     if e ~= 2 then
                                         b = y(6, 97, 3, 48, k); u = le
                                         te = 0; break;
                                     end; l = -41; h = -1;
-                                until true; else
+                                until true;
+                            else
                                 b = y(6, 97, 3, 48, k); u = le
                                 te = 0;
-                            end else
+                            end
+                        else
                             n = y(6, 66, 1, 75, k); _ = y(6, 56, 2, 99, k);
-                        end end
+                        end
+                    end
                     e = e + 1;
                 end; for e = 0, z do if (e >= b) then m[e - b] = g[e + 1]; else t[e] = g[e + 1]; end; end; local g = z -
-                b + 1
+                    b + 1
                 local e; local y; local function b(...) while true do end end
                 while true do
                     if l < -40 then l = l + 42 end
-                    e = n[l]; y = e[ee]; if y > 93 then if 141 > y then if y < 117 then if 104 < y then if 111 > y then if 107 < y then if y > 108 then if 108 ~= y then for l = 18, 75 do
+                    e = n[l]; y = e[ee]; if y > 93 then
+                        if 141 > y then
+                            if y < 117 then
+                                if 104 < y then
+                                    if 111 > y then
+                                        if 107 < y then
+                                            if y > 108 then
+                                                if 108 ~= y then
+                                                    for l = 18, 75 do
                                                         if 110 > y then
                                                             local f = e[f]
                                                             local s = { t[f](d(t, f + 1, e[s])) }; local l = 0; for e = f, e[c] do
@@ -284,307 +349,608 @@
                                                         end; local e = e[f]
                                                         t[e] = t[e]()
                                                         break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local e = e[f]
                                                     t[e] = t[e]()
-                                                end else
+                                                end
+                                            else
                                                 local e = e[f]; do return d(t, e, h) end;
-                                            end else if 106 <= y then if y > 104 then for n = 21, 85 do
+                                            end
+                                        else
+                                            if 106 <= y then
+                                                if y > 104 then
+                                                    for n = 21, 85 do
                                                         if 107 > y then
                                                             do return t[e[f]] end
                                                             break;
                                                         end; t[e[f]] = (e[s] ~= 0); l = l + 1; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     t[e[f]] = (e[s] ~= 0); l = l + 1;
-                                                end else t[e[f]] = {}; end end else if y < 114 then if y < 112 then t
-                                                    [e[f]](); else if 111 <= y then for d = 46, 74 do
+                                                end
+                                            else
+                                                t[e[f]] = {};
+                                            end
+                                        end
+                                    else
+                                        if y < 114 then
+                                            if y < 112 then
+                                                t
+                                                    [e[f]]();
+                                            else
+                                                if 111 <= y then
+                                                    for d = 46, 74 do
                                                         if y > 112 then
                                                             r[e[s]] = t[e[f]]; break;
-                                                        end; local d; for y = 0, 6 do if 3 > y then if y < 1 then
+                                                        end; local d; for y = 0, 6 do
+                                                            if 3 > y then
+                                                                if y < 1 then
                                                                     d = e[f]
                                                                     t[d] = t[d]()
                                                                     l = l + 1; e = n[l];
-                                                                else if y ~= -2 then repeat
+                                                                else
+                                                                    if y ~= -2 then
+                                                                        repeat
                                                                             if y < 2 then
                                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                                [l]; break;
+                                                                                    [l]; break;
                                                                             end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                        until true; else
+                                                                        until true;
+                                                                    else
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    end end else if y >= 5 then if y ~= 6 then
+                                                                    end
+                                                                end
+                                                            else
+                                                                if y >= 5 then
+                                                                    if y ~= 6 then
                                                                         for e = e[f], e[s] do t[e] = nil; end; l = l + 1; e =
-                                                                        n[l];
-                                                                    else l = e[s]; end else if y == 3 then
+                                                                            n[l];
+                                                                    else
+                                                                        l = e[s];
+                                                                    end
+                                                                else
+                                                                    if y == 3 then
                                                                         d = e[f]
                                                                         t[d] = t[d](t[d + 1])
                                                                         l = l + 1; e = n[l];
                                                                     else
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    end end end end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else
-                                                    local d; for y = 0, 6 do if 3 > y then if y < 1 then
+                                                    end;
+                                                else
+                                                    local d; for y = 0, 6 do
+                                                        if 3 > y then
+                                                            if y < 1 then
                                                                 d = e[f]
                                                                 t[d] = t[d]()
                                                                 l = l + 1; e = n[l];
-                                                            else if y ~= -2 then repeat
+                                                            else
+                                                                if y ~= -2 then
+                                                                    repeat
                                                                         if y < 2 then
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                    until true; else
+                                                                    until true;
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end else if y >= 5 then if y ~= 6 then
+                                                                end
+                                                            end
+                                                        else
+                                                            if y >= 5 then
+                                                                if y ~= 6 then
                                                                     for e = e[f], e[s] do t[e] = nil; end; l = l + 1; e =
-                                                                    n[l];
-                                                                else l = e[s]; end else if y == 3 then
+                                                                        n[l];
+                                                                else
+                                                                    l = e[s];
+                                                                end
+                                                            else
+                                                                if y == 3 then
                                                                     d = e[f]
                                                                     t[d] = t[d](t[d + 1])
                                                                     l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end end end
-                                                end end else if y >= 115 then if 112 < y then for d = 12, 93 do
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if y >= 115 then
+                                                if 112 < y then
+                                                    for d = 12, 93 do
                                                         if y ~= 116 then
-                                                            for y = 0, 6 do if y < 3 then if y < 1 then
+                                                            for y = 0, 6 do
+                                                                if y < 3 then
+                                                                    if y < 1 then
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    else if y == 2 then
+                                                                    else
+                                                                        if y == 2 then
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                                         else
                                                                             t[e[f]] = t[e[s]] - t[e[c]]; l = l + 1; e = n
-                                                                            [l];
-                                                                        end end else if 4 >= y then if y == 4 then
+                                                                                [l];
+                                                                        end
+                                                                    end
+                                                                else
+                                                                    if 4 >= y then
+                                                                        if y == 4 then
                                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
                                                                         else
                                                                             t[e[f]] = t[e[s]] - t[e[c]]; l = l + 1; e = n
-                                                                            [l];
-                                                                        end else if y > 4 then repeat
+                                                                                [l];
+                                                                        end
+                                                                    else
+                                                                        if y > 4 then
+                                                                            repeat
                                                                                 if 6 ~= y then
                                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                                                    n[l]; break;
+                                                                                        n[l]; break;
                                                                                 end; t(e[f], e[s]);
-                                                                            until true; else t(e[f], e[s]); end end end end
+                                                                            until true;
+                                                                        else
+                                                                            t(e[f], e[s]);
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
                                                             break;
-                                                        end; local d, y; for r = 0, 2 do if r > 0 then if 1 < r then
+                                                        end; local d, y; for r = 0, 2 do
+                                                            if r > 0 then
+                                                                if 1 < r then
                                                                     d = e[f]; y = t[e[s]]; t[d + 1] = y; t[d] = y[e[c]];
                                                                 else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 o[e[s]] = t[e[f]]; l = l + 1; e = n[l];
-                                                            end end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else
-                                                    local d, y; for r = 0, 2 do if r > 0 then if 1 < r then
+                                                    end;
+                                                else
+                                                    local d, y; for r = 0, 2 do
+                                                        if r > 0 then
+                                                            if 1 < r then
                                                                 d = e[f]; y = t[e[s]]; t[d + 1] = y; t[d] = y[e[c]];
                                                             else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             o[e[s]] = t[e[f]]; l = l + 1; e = n[l];
-                                                        end end
-                                                end else
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local e = e[f]; h = e + g - 1; for l = e, h do
                                                     local e = m[l - e]; t[l] = e;
                                                 end;
-                                            end end end else if y <= 98 then if y < 96 then if 92 < y then repeat
+                                            end
+                                        end
+                                    end
+                                else
+                                    if y <= 98 then
+                                        if y < 96 then
+                                            if 92 < y then
+                                                repeat
                                                     if 94 < y then
                                                         t[e[f]] = t[e[s]]; break;
                                                     end; local l = e[f]; do return d(t, l, l + e[s]) end;
-                                                until true; else t[e[f]] = t[e[s]]; end else if 97 > y then
+                                                until true;
+                                            else
+                                                t[e[f]] = t[e[s]];
+                                            end
+                                        else
+                                            if 97 > y then
                                                 local e = e[f]
                                                 t[e] = t[e](d(t, e + 1, h))
-                                            else if 96 <= y then repeat
+                                            else
+                                                if 96 <= y then
+                                                    repeat
                                                         if 98 ~= y then
-                                                            for y = 0, 6 do if y < 3 then if 0 >= y then
+                                                            for y = 0, 6 do
+                                                                if y < 3 then
+                                                                    if 0 >= y then
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    else if 2 == y then
+                                                                    else
+                                                                        if 2 == y then
                                                                             t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
                                                                         else
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                        end end else if 4 < y then if 5 < y then l = e
-                                                                            [s]; else
+                                                                        end
+                                                                    end
+                                                                else
+                                                                    if 4 < y then
+                                                                        if 5 < y then
+                                                                            l = e
+                                                                                [s];
+                                                                        else
                                                                             t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l];
-                                                                        end else if y >= 0 then for d = 34, 87 do
+                                                                        end
+                                                                    else
+                                                                        if y >= 0 then
+                                                                            for d = 34, 87 do
                                                                                 if 4 ~= y then
                                                                                     t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                                                    n[l]; break;
+                                                                                        n[l]; break;
                                                                                 end; t[e[f]] = r[e[s]]; l = l + 1; e = n
-                                                                                [l]; break;
-                                                                            end; else
+                                                                                    [l]; break;
+                                                                            end;
+                                                                        else
                                                                             t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                        end end end end
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
                                                             break;
-                                                        end; local y, h; for r = 0, 6 do if r >= 3 then if r < 5 then if 1 <= r then for c = 39, 67 do
+                                                        end; local y, h; for r = 0, 6 do
+                                                            if r >= 3 then
+                                                                if r < 5 then
+                                                                    if 1 <= r then
+                                                                        for c = 39, 67 do
                                                                             if 4 ~= r then
                                                                                 y = e[f]
                                                                                 t[y] = t[y](d(t, y + 1, e[s]))
                                                                                 l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                        end; else
+                                                                        end;
+                                                                    else
                                                                         t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                    end else if 4 <= r then repeat
+                                                                    end
+                                                                else
+                                                                    if 4 <= r then
+                                                                        repeat
                                                                             if r ~= 6 then
                                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                                [l]; break;
+                                                                                    [l]; break;
                                                                             end; t[e[f]] = t[e[s]][e[c]];
-                                                                        until true; else
+                                                                        until true;
+                                                                    else
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    end end else if 0 >= r then
+                                                                    end
+                                                                end
+                                                            else
+                                                                if 0 >= r then
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                else if -1 <= r then repeat
+                                                                else
+                                                                    if -1 <= r then
+                                                                        repeat
                                                                             if r > 1 then
                                                                                 t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                             end; y = e[f]; h = t[e[s]]; t[y + 1] = h; t[y] =
-                                                                            h[e[c]]; l = l + 1; e = n[l];
-                                                                        until true; else
+                                                                                h[e[c]]; l = l + 1; e = n[l];
+                                                                        until true;
+                                                                    else
                                                                         y = e[f]; h = t[e[s]]; t[y + 1] = h; t[y] = h
-                                                                        [e[c]]; l = l + 1; e = n[l];
-                                                                    end end end end
-                                                    until true; else for y = 0, 6 do if y < 3 then if 0 >= y then
+                                                                            [e[c]]; l = l + 1; e = n[l];
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
+                                                    until true;
+                                                else
+                                                    for y = 0, 6 do
+                                                        if y < 3 then
+                                                            if 0 >= y then
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            else if 2 == y then
+                                                            else
+                                                                if 2 == y then
                                                                     t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end else if 4 < y then if 5 < y then l = e[s]; else
+                                                                end
+                                                            end
+                                                        else
+                                                            if 4 < y then
+                                                                if 5 < y then
+                                                                    l = e[s];
+                                                                else
                                                                     t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l];
-                                                                end else if y >= 0 then for d = 34, 87 do
+                                                                end
+                                                            else
+                                                                if y >= 0 then
+                                                                    for d = 34, 87 do
                                                                         if 4 ~= y then
                                                                             t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                end end end end end end end else if y > 101 then if 102 >= y then
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y > 101 then
+                                            if 102 >= y then
                                                 local y; y = e[f]
                                                 t[y] = t[y](d(t, y + 1, e[s]))
                                                 l = l + 1; e = n[l]; t[e[f]] = t[e[s]] / t[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                t[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] + e[c]; l = l + 1; e = n
-                                                [l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]; do return d(t, y,
-                                                        y + e[s]) end; l = l + 1; e = n[l]; l = e[s];
-                                            else if y ~= 100 then repeat
+                                                    t[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] + e[c]; l = l + 1; e =
+                                                    n
+                                                    [l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]; do
+                                                    return d(t, y,
+                                                        y + e[s])
+                                                end; l = l + 1; e = n[l]; l = e[s];
+                                            else
+                                                if y ~= 100 then
+                                                    repeat
                                                         if 103 ~= y then
                                                             local y; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = {}; l =
-                                                            l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y =
-                                                            e[f]
+                                                                l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y =
+                                                                e[f]
                                                             t[y] = t[y](d(t, y + 1, e[s]))
                                                             l = l + 1; e = n[l]; t[e[f]] = {}; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                            t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
+                                                                t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
                                                             break;
-                                                        end; local y, h; for o = 0, 4 do if o >= 2 then if o >= 3 then if 4 > o then
+                                                        end; local y, h; for o = 0, 4 do
+                                                            if o >= 2 then
+                                                                if o >= 3 then
+                                                                    if 4 > o then
                                                                         y = e[f]
                                                                         t[y] = t[y](d(t, y + 1, e[s]))
                                                                         l = l + 1; e = n[l];
-                                                                    else if not t[e[f]] then l = l + 1; else l = e[s]; end; end else
+                                                                    else
+                                                                        if not t[e[f]] then l = l + 1; else l = e[s]; end;
+                                                                    end
+                                                                else
                                                                     t(e[f], e[s]); l = l + 1; e = n[l];
-                                                                end else if 1 ~= o then
+                                                                end
+                                                            else
+                                                                if 1 ~= o then
                                                                     t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
                                                                 else
                                                                     y = e[f]; h = t[e[s]]; t[y + 1] = h; t[y] = h[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                end end end
-                                                    until true; else
+                                                                        l + 1; e = n[l];
+                                                                end
+                                                            end
+                                                        end
+                                                    until true;
+                                                else
                                                     local y; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = {}; l = l +
-                                                    1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
                                                     l = l + 1; e = n[l]; t[e[f]] = {}; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                    t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
-                                                end end else if y >= 100 then if 97 < y then repeat
+                                                        t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
+                                                end
+                                            end
+                                        else
+                                            if y >= 100 then
+                                                if 97 < y then
+                                                    repeat
                                                         if y > 100 then
                                                             if (t[e[f]] <= e[c]) then l = l + 1; else l = e[s]; end; break;
                                                         end; do return end;
-                                                    until true; else if (t[e[f]] <= e[c]) then l = l + 1; else l = e[s]; end; end else
+                                                    until true;
+                                                else
+                                                    if (t[e[f]] <= e[c]) then l = l + 1; else l = e[s]; end;
+                                                end
+                                            else
                                                 local d, u, a, h, b, k, y; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] =
-                                                o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                [l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; y = 0; while y > -1 do
-                                                    if y > 3 then if 6 > y then if 5 > y then b = h[d[a]]; else k = d[u]; end else if 5 ~= y then for e = 36, 88 do
+                                                    o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
+                                                    n
+                                                    [l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; y = 0; while y > -1 do
+                                                    if y > 3 then
+                                                        if 6 > y then
+                                                            if 5 > y then b = h[d[a]]; else k = d[u]; end
+                                                        else
+                                                            if 5 ~= y then
+                                                                for e = 36, 88 do
                                                                     if 6 ~= y then
                                                                         y = -2; break;
                                                                     end; t[k] = b; break;
-                                                                end; else y = -2; end end else if 2 <= y then if y == 3 then h =
-                                                                t; else a = s; end else if y > -1 then for l = 23, 98 do
+                                                                end;
+                                                            else
+                                                                y = -2;
+                                                            end
+                                                        end
+                                                    else
+                                                        if 2 <= y then
+                                                            if y == 3 then
+                                                                h =
+                                                                    t;
+                                                            else
+                                                                a = s;
+                                                            end
+                                                        else
+                                                            if y > -1 then
+                                                                for l = 23, 98 do
                                                                     if y ~= 0 then
                                                                         u = f; break;
                                                                     end; d = e; break;
-                                                                end; else d = e; end end end
+                                                                end;
+                                                            else
+                                                                d = e;
+                                                            end
+                                                        end
+                                                    end
                                                     y = y + 1
                                                 end
                                                 l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                [e[s]][e[c]];
-                                            end end end end else if y > 128 then if 135 > y then if y <= 131 then if 130 > y then t[e[f]] =
-                                                t[e[s]] * t[e[c]]; else if 127 ~= y then for h = 45, 93 do
+                                                    [e[s]][e[c]];
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                if y > 128 then
+                                    if 135 > y then
+                                        if y <= 131 then
+                                            if 130 > y then
+                                                t[e[f]] =
+                                                    t[e[s]] * t[e[c]];
+                                            else
+                                                if 127 ~= y then
+                                                    for h = 45, 93 do
                                                         if 130 < y then
                                                             if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end; break;
-                                                        end; local _, h, b, p, u, k, a, y; for y = 0, 6 do if y < 3 then if y > 0 then if -2 ~= y then repeat
+                                                        end; local _, h, b, p, u, k, a, y; for y = 0, 6 do
+                                                            if y < 3 then
+                                                                if y > 0 then
+                                                                    if -2 ~= y then
+                                                                        repeat
                                                                             if 1 ~= y then
                                                                                 t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]] = {}; l = l + 1; e = n[l];
-                                                                        until true; else
+                                                                        until true;
+                                                                    else
                                                                         t[e[f]] = {}; l = l + 1; e = n[l];
-                                                                    end else
+                                                                    end
+                                                                else
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                end else if y > 4 then if y > 4 then repeat
+                                                                end
+                                                            else
+                                                                if y > 4 then
+                                                                    if y > 4 then
+                                                                        repeat
                                                                             if y > 5 then
                                                                                 y = 0; while y > -1 do
-                                                                                    if y >= 4 then if 6 > y then if 3 <= y then repeat
+                                                                                    if y >= 4 then
+                                                                                        if 6 > y then
+                                                                                            if 3 <= y then
+                                                                                                repeat
                                                                                                     if y > 4 then
                                                                                                         a = h[b]; break;
                                                                                                     end; k = u[h[p]];
-                                                                                                until true; else a = h
-                                                                                                [b]; end else if y >= 3 then for e = 49, 61 do
+                                                                                                until true;
+                                                                                            else
+                                                                                                a = h
+                                                                                                    [b];
+                                                                                            end
+                                                                                        else
+                                                                                            if y >= 3 then
+                                                                                                for e = 49, 61 do
                                                                                                     if 6 < y then
                                                                                                         y = -2; break;
                                                                                                     end; t[a] = k; break;
-                                                                                                end; else y = -2; end end else if 2 <= y then if 1 <= y then repeat
+                                                                                                end;
+                                                                                            else
+                                                                                                y = -2;
+                                                                                            end
+                                                                                        end
+                                                                                    else
+                                                                                        if 2 <= y then
+                                                                                            if 1 <= y then
+                                                                                                repeat
                                                                                                     if 2 < y then
                                                                                                         u = t; break;
                                                                                                     end; p = s;
-                                                                                                until true; else u = t; end else if y ~= -4 then repeat
+                                                                                                until true;
+                                                                                            else
+                                                                                                u = t;
+                                                                                            end
+                                                                                        else
+                                                                                            if y ~= -4 then
+                                                                                                repeat
                                                                                                     if y > 0 then
                                                                                                         b = f; break;
                                                                                                     end; h = e;
-                                                                                                until true; else h = e; end end end
+                                                                                                until true;
+                                                                                            else
+                                                                                                h = e;
+                                                                                            end
+                                                                                        end
+                                                                                    end
                                                                                     y = y + 1
                                                                                 end
                                                                                 break;
                                                                             end; t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
-                                                                        until true; else
+                                                                        until true;
+                                                                    else
                                                                         y = 0; while y > -1 do
-                                                                            if y >= 4 then if 6 > y then if 3 <= y then repeat
+                                                                            if y >= 4 then
+                                                                                if 6 > y then
+                                                                                    if 3 <= y then
+                                                                                        repeat
                                                                                             if y > 4 then
                                                                                                 a = h[b]; break;
                                                                                             end; k = u[h[p]];
-                                                                                        until true; else a = h[b]; end else if y >= 3 then for e = 49, 61 do
+                                                                                        until true;
+                                                                                    else
+                                                                                        a = h[b];
+                                                                                    end
+                                                                                else
+                                                                                    if y >= 3 then
+                                                                                        for e = 49, 61 do
                                                                                             if 6 < y then
                                                                                                 y = -2; break;
                                                                                             end; t[a] = k; break;
-                                                                                        end; else y = -2; end end else if 2 <= y then if 1 <= y then repeat
+                                                                                        end;
+                                                                                    else
+                                                                                        y = -2;
+                                                                                    end
+                                                                                end
+                                                                            else
+                                                                                if 2 <= y then
+                                                                                    if 1 <= y then
+                                                                                        repeat
                                                                                             if 2 < y then
                                                                                                 u = t; break;
                                                                                             end; p = s;
-                                                                                        until true; else u = t; end else if y ~= -4 then repeat
+                                                                                        until true;
+                                                                                    else
+                                                                                        u = t;
+                                                                                    end
+                                                                                else
+                                                                                    if y ~= -4 then
+                                                                                        repeat
                                                                                             if y > 0 then
                                                                                                 b = f; break;
                                                                                             end; h = e;
-                                                                                        until true; else h = e; end end end
+                                                                                        until true;
+                                                                                    else
+                                                                                        h = e;
+                                                                                    end
+                                                                                end
+                                                                            end
                                                                             y = y + 1
                                                                         end
-                                                                    end else if y ~= 1 then repeat
+                                                                    end
+                                                                else
+                                                                    if y ~= 1 then
+                                                                        repeat
                                                                             if 4 ~= y then
                                                                                 _ = e[f]
                                                                                 t[_] = t[_](d(t, _ + 1, e[s]))
                                                                                 l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                                            n[l];
-                                                                        until true; else
+                                                                                n[l];
+                                                                        until true;
+                                                                    else
                                                                         t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                    end end end end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end; end end else if 133 <= y then if 133 == y then
+                                                    end;
+                                                else
+                                                    if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end;
+                                                end
+                                            end
+                                        else
+                                            if 133 <= y then
+                                                if 133 == y then
                                                     local y; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                    [e[s]] + t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] / e[c]; l =
-                                                    l + 1; e = n[l]; y = e[f]
+                                                        [e[s]] + t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] / e[c]; l =
+                                                        l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](t[y + 1])
                                                     l = l + 1; e = n[l]; t[e[f]] = t[e[s]][t[e[c]]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]][e[c]]; l = l + 1; e = n[l]; if (t[e[f]] <= t[e[c]]) then l =
-                                                        e[s]; else l = l + 1; end;
+                                                        t[e[s]][e[c]]; l = l + 1; e = n[l]; if (t[e[f]] <= t[e[c]]) then
+                                                        l =
+                                                            e[s];
+                                                    else
+                                                        l = l + 1;
+                                                    end;
                                                 else
                                                     local e = e[f]
                                                     local f, l = u(t[e](t[e + 1]))
@@ -592,74 +958,148 @@
                                                     local l = 0; for e = e, h do
                                                         l = l + 1; t[e] = f[l];
                                                     end;
-                                                end else
+                                                end
+                                            else
                                                 local y, o; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e
-                                                [c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] =
-                                                t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t[e[s]]; t[y + 1] = o; t[y] =
-                                                o[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y =
-                                                e[f]
+                                                    [c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] =
+                                                    t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t[e[s]]; t[y + 1] =
+                                                o; t[y] =
+                                                    o[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y =
+                                                    e[f]
                                                 t[y](d(t, y + 1, e[s]))
-                                            end end else if y <= 137 then if 135 < y then if 136 == y then
+                                            end
+                                        end
+                                    else
+                                        if y <= 137 then
+                                            if 135 < y then
+                                                if 136 == y then
                                                     t[e[f]] = {}; l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                    n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l =
-                                                    l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]];
+                                                        n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] = o
+                                                    [e[s]]; l =
+                                                        l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
+                                                        t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]];
                                                 else
-                                                    local d; for y = 0, 4 do if y >= 2 then if 3 > y then
+                                                    local d; for y = 0, 4 do
+                                                        if y >= 2 then
+                                                            if 3 > y then
                                                                 d = e[f]
                                                                 t[d] = t[d](t[d + 1])
                                                                 l = l + 1; e = n[l];
-                                                            else if y >= -1 then for d = 10, 54 do
+                                                            else
+                                                                if y >= -1 then
+                                                                    for d = 10, 54 do
                                                                         if 3 ~= y then
                                                                             t[e[f]][e[s]] = t[e[c]]; break;
                                                                         end; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
                                                                     t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                end end else if 0 == y then
+                                                                end
+                                                            end
+                                                        else
+                                                            if 0 == y then
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                             else
                                                                 t(e[f], e[s]); l = l + 1; e = n[l];
-                                                            end end end
-                                                end else
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local y, o, a, h, u, r, c, b; c = 0; while c > -1 do
-                                                    if 3 >= c then if 1 >= c then if -3 ~= c then for l = 21, 94 do
+                                                    if 3 >= c then
+                                                        if 1 >= c then
+                                                            if -3 ~= c then
+                                                                for l = 21, 94 do
                                                                     if c ~= 0 then
                                                                         o = f; break;
                                                                     end; y = e; break;
-                                                                end; else y = e; end else if -2 < c then for e = 15, 84 do
+                                                                end;
+                                                            else
+                                                                y = e;
+                                                            end
+                                                        else
+                                                            if -2 < c then
+                                                                for e = 15, 84 do
                                                                     if c > 2 then
                                                                         h = t; break;
                                                                     end; a = s; break;
-                                                                end; else h = t; end end else if 6 <= c then if 2 <= c then for e = 16, 93 do
+                                                                end;
+                                                            else
+                                                                h = t;
+                                                            end
+                                                        end
+                                                    else
+                                                        if 6 <= c then
+                                                            if 2 <= c then
+                                                                for e = 16, 93 do
                                                                     if 7 > c then
                                                                         t[r] = u; break;
                                                                     end; c = -2; break;
-                                                                end; else c = -2; end else if 0 < c then repeat
+                                                                end;
+                                                            else
+                                                                c = -2;
+                                                            end
+                                                        else
+                                                            if 0 < c then
+                                                                repeat
                                                                     if c > 4 then
                                                                         r = y[o]; break;
                                                                     end; u = h[y[a]];
-                                                                until true; else r = y[o]; end end end
+                                                                until true;
+                                                            else
+                                                                r = y[o];
+                                                            end
+                                                        end
+                                                    end
                                                     c = c + 1
                                                 end
                                                 l = l + 1; e = n[l]; c = 0; while c > -1 do
-                                                    if c >= 4 then if c > 5 then if 4 <= c then for e = 24, 52 do
+                                                    if c >= 4 then
+                                                        if c > 5 then
+                                                            if 4 <= c then
+                                                                for e = 24, 52 do
                                                                     if 6 ~= c then
                                                                         c = -2; break;
                                                                     end; t[r] = u; break;
-                                                                end; else c = -2; end else if c ~= 5 then u = h[y[a]]; else r =
-                                                                y[o]; end end else if 2 > c then if c ~= 1 then y = e; else o =
-                                                                f; end else if c < 3 then a = s; else h = t; end end end
+                                                                end;
+                                                            else
+                                                                c = -2;
+                                                            end
+                                                        else
+                                                            if c ~= 5 then
+                                                                u = h[y[a]];
+                                                            else
+                                                                r =
+                                                                    y[o];
+                                                            end
+                                                        end
+                                                    else
+                                                        if 2 > c then
+                                                            if c ~= 1 then
+                                                                y = e;
+                                                            else
+                                                                o =
+                                                                    f;
+                                                            end
+                                                        else
+                                                            if c < 3 then a = s; else h = t; end
+                                                        end
+                                                    end
                                                     c = c + 1
                                                 end
                                                 l = l + 1; e = n[l]; b = e[f]
                                                 t[b] = t[b](d(t, b + 1, e[s]))
                                                 l = l + 1; e = n[l]; do return t[e[f]] end
                                                 l = l + 1; e = n[l]; do return end;
-                                            end else if y < 139 then
+                                            end
+                                        else
+                                            if y < 139 then
                                                 local y, b, p, k, r, a; t[e[f]] = {}; l = l + 1; e = n[l]; t[e[f]] = {}; l =
-                                                l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; y = e[f]; b = t
-                                                [e[s]]; t[y + 1] = b; t[y] = b[e[c]]; l = l + 1; e = n[l]; y = e[f]
+                                                    l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; y = e[f]; b =
+                                                    t
+                                                    [e[s]]; t[y + 1] = b; t[y] = b[e[c]]; l = l + 1; e = n[l]; y = e[f]
                                                 a, k = u(t[y](t[y + 1]))
                                                 h = k + y - 1
                                                 r = 0; for e = y, h do
@@ -669,65 +1109,131 @@
                                                     r = r + 1; t[e] = a[r];
                                                 end
                                                 l = l + 1; e = n[l]; l = e[s];
-                                            else if y ~= 140 then
+                                            else
+                                                if y ~= 140 then
                                                     local y; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]
-                                                    [e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                    n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        [e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
+                                                        n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y](d(t, y + 1, e[s]))
-                                                    l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; if t[e[f]] then l =
-                                                        l + 1; else l = e[s]; end;
-                                                else for y = 0, 6 do if y >= 3 then if 5 > y then if 0 <= y then repeat
+                                                    l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; if t[e[f]] then
+                                                        l =
+                                                            l + 1;
+                                                    else
+                                                        l = e[s];
+                                                    end;
+                                                else
+                                                    for y = 0, 6 do
+                                                        if y >= 3 then
+                                                            if 5 > y then
+                                                                if 0 <= y then
+                                                                    repeat
                                                                         if 3 < y then
                                                                             t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n
-                                                                        [l];
-                                                                    until true; else
+                                                                            [l];
+                                                                    until true;
+                                                                else
                                                                     t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                end else if y > 1 then for d = 33, 84 do
+                                                                end
+                                                            else
+                                                                if y > 1 then
+                                                                    for d = 33, 84 do
                                                                         if 6 > y then
                                                                             t[e[f]] = {}; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]][e[s]] = t[e[c]]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = {}; l = l + 1; e = n[l];
-                                                                end end else if 1 <= y then if 0 ~= y then for d = 24, 90 do
+                                                                end
+                                                            end
+                                                        else
+                                                            if 1 <= y then
+                                                                if 0 ~= y then
+                                                                    for d = 24, 90 do
                                                                         if y > 1 then
                                                                             t[e[f]] = {}; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = {}; l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                            end end end end end end end else if 123 <= y then if y < 126 then if y >= 124 then if y ~= 122 then for l = 12, 80 do
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if 123 <= y then
+                                        if y < 126 then
+                                            if y >= 124 then
+                                                if y ~= 122 then
+                                                    for l = 12, 80 do
                                                         if 125 > y then
                                                             t[e[f]][t[e[s]]] = t[e[c]]; break;
                                                         end; local f = e[f]; local l = t[e[s]]; t[f + 1] = l; t[f] = l
-                                                        [e[c]]; break;
-                                                    end; else
+                                                            [e[c]]; break;
+                                                    end;
+                                                else
                                                     local f = e[f]; local l = t[e[s]]; t[f + 1] = l; t[f] = l[e[c]];
-                                                end else t[e[f]] = #t[e[s]]; end else if 126 >= y then
+                                                end
+                                            else
+                                                t[e[f]] = #t[e[s]];
+                                            end
+                                        else
+                                            if 126 >= y then
                                                 local o, k, h, a, p, b, u, y; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; o =
-                                                e[f]; k = t[e[s]]; t[o + 1] = k; t[o] = k[e[c]]; l = l + 1; e = n[l]; y = 0; while y > -1 do
-                                                    if y < 3 then if 0 < y then if y ~= -3 then for e = 29, 68 do
+                                                    e[f]; k = t[e[s]]; t[o + 1] = k; t[o] = k[e[c]]; l = l + 1; e = n[l]; y = 0; while y > -1 do
+                                                    if y < 3 then
+                                                        if 0 < y then
+                                                            if y ~= -3 then
+                                                                for e = 29, 68 do
                                                                     if y ~= 1 then
                                                                         p = s; break;
                                                                     end; a = f; break;
-                                                                end; else a = f; end else h = e; end else if y <= 4 then if 0 < y then repeat
+                                                                end;
+                                                            else
+                                                                a = f;
+                                                            end
+                                                        else
+                                                            h = e;
+                                                        end
+                                                    else
+                                                        if y <= 4 then
+                                                            if 0 < y then
+                                                                repeat
                                                                     if 4 ~= y then
                                                                         b = h[p]; break;
                                                                     end; u = h[a];
-                                                                until true; else u = h[a]; end else if 3 <= y then repeat
+                                                                until true;
+                                                            else
+                                                                u = h[a];
+                                                            end
+                                                        else
+                                                            if 3 <= y then
+                                                                repeat
                                                                     if 5 ~= y then
                                                                         y = -2; break;
                                                                     end; t(u, b);
-                                                                until true; else t(u, b); end end end
+                                                                until true;
+                                                            else
+                                                                t(u, b);
+                                                            end
+                                                        end
+                                                    end
                                                     y = y + 1
                                                 end
                                                 l = l + 1; e = n[l]; o = e[f]
                                                 t[o](d(t, o + 1, e[s]))
                                                 l = l + 1; e = n[l]; t[e[f]] = (e[s] ~= 0); l = l + 1; e = n[l]; r[e[s]] =
-                                                t[e[f]]; l = l + 1; e = n[l]; do return end;
-                                            else if 123 < y then for l = 34, 69 do
+                                                    t[e[f]]; l = l + 1; e = n[l]; do return end;
+                                            else
+                                                if 123 < y then
+                                                    for l = 34, 69 do
                                                         if 127 < y then
                                                             local l = e[f]
                                                             local s = { t[l](d(t, l + 1, h)) }; local f = 0; for e = l, e[c] do
@@ -735,228 +1241,459 @@
                                                             end
                                                             break;
                                                         end; t[e[f]] = t[e[s]] - t[e[c]]; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local f = e[f]
                                                     local s = { t[f](d(t, f + 1, h)) }; local l = 0; for e = f, e[c] do
                                                         l = l + 1; t[e] = s[l];
                                                     end
-                                                end end end else if 120 <= y then if y >= 121 then if 122 ~= y then if (t[e[f]] ~= t[e[c]]) then l =
-                                                        l + 1; else l = e[s]; end; else t[e[f]] = t[e[s]][e[c]]; end else
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if 120 <= y then
+                                            if y >= 121 then
+                                                if 122 ~= y then
+                                                    if (t[e[f]] ~= t[e[c]]) then
+                                                        l =
+                                                            l + 1;
+                                                    else
+                                                        l = e[s];
+                                                    end;
+                                                else
+                                                    t[e[f]] = t[e[s]][e[c]];
+                                                end
+                                            else
                                                 local c; c = e[f]
                                                 t[c](d(t, c + 1, e[s]))
                                                 l = l + 1; e = n[l]; do return end;
-                                            end else if y > 117 then if y < 119 then
+                                            end
+                                        else
+                                            if y > 117 then
+                                                if y < 119 then
                                                     local l = e[f]; do return t[l](d(t, l + 1, e[s])) end;
                                                 else
-                                                    local d; for y = 0, 6 do if y < 3 then if y >= 1 then if y > 1 then
+                                                    local d; for y = 0, 6 do
+                                                        if y < 3 then
+                                                            if y >= 1 then
+                                                                if y > 1 then
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
                                                                 else
                                                                     d = e[f]
                                                                     t[d](t[d + 1])
                                                                     l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t(e[f], e[s]); l = l + 1; e = n[l];
-                                                            end else if y >= 5 then if 3 <= y then for d = 27, 60 do
+                                                            end
+                                                        else
+                                                            if y >= 5 then
+                                                                if 3 <= y then
+                                                                    for d = 27, 60 do
                                                                         if y > 5 then
                                                                             if t[e[f]] then l = l + 1; else l = e[s]; end; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else if t[e[f]] then l = l + 1; else l = e[s]; end; end else if 4 == y then
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
+                                                                    if t[e[f]] then l = l + 1; else l = e[s]; end;
+                                                                end
+                                                            else
+                                                                if 4 == y then
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end end end
-                                                end else t[e[f]] = t[e[s]] / t[e[c]]; end end end end end else if 164 > y then if y > 151 then if 158 <= y then if y > 160 then if 161 >= y then
-                                                local r, k, h, a, p, b, u, y; for y = 0, 5 do if y <= 2 then if y > 0 then if 0 < y then for d = 15, 93 do
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                t[e[f]] = t[e[s]] / t[e[c]];
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            if 164 > y then
+                                if y > 151 then
+                                    if 158 <= y then
+                                        if y > 160 then
+                                            if 161 >= y then
+                                                local r, k, h, a, p, b, u, y; for y = 0, 5 do
+                                                    if y <= 2 then
+                                                        if y > 0 then
+                                                            if 0 < y then
+                                                                for d = 15, 93 do
                                                                     if y ~= 1 then
                                                                         t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                        end else if 4 <= y then if 0 <= y then for c = 34, 55 do
+                                                        end
+                                                    else
+                                                        if 4 <= y then
+                                                            if 0 <= y then
+                                                                for c = 34, 55 do
                                                                     if y < 5 then
                                                                         y = 0; while y > -1 do
-                                                                            if 2 < y then if y < 5 then if 2 ~= y then for e = 19, 93 do
+                                                                            if 2 < y then
+                                                                                if y < 5 then
+                                                                                    if 2 ~= y then
+                                                                                        for e = 19, 93 do
                                                                                             if 4 > y then
                                                                                                 b = h[p]; break;
                                                                                             end; u = h[a]; break;
-                                                                                        end; else u = h[a]; end else if y ~= 4 then for e = 27, 87 do
+                                                                                        end;
+                                                                                    else
+                                                                                        u = h[a];
+                                                                                    end
+                                                                                else
+                                                                                    if y ~= 4 then
+                                                                                        for e = 27, 87 do
                                                                                             if y ~= 5 then
                                                                                                 y = -2; break;
                                                                                             end; t(u, b); break;
-                                                                                        end; else t(u, b); end end else if y > 0 then if y > -2 then for e = 36, 77 do
+                                                                                        end;
+                                                                                    else
+                                                                                        t(u, b);
+                                                                                    end
+                                                                                end
+                                                                            else
+                                                                                if y > 0 then
+                                                                                    if y > -2 then
+                                                                                        for e = 36, 77 do
                                                                                             if 2 > y then
                                                                                                 a = f; break;
                                                                                             end; p = s; break;
-                                                                                        end; else a = f; end else h = e; end end
+                                                                                        end;
+                                                                                    else
+                                                                                        a = f;
+                                                                                    end
+                                                                                else
+                                                                                    h = e;
+                                                                                end
+                                                                            end
                                                                             y = y + 1
                                                                         end
                                                                         l = l + 1; e = n[l]; break;
                                                                     end; r = e[f]
                                                                     t[r] = t[r](d(t, r + 1, e[s]))
                                                                     break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 r = e[f]
                                                                 t[r] = t[r](d(t, r + 1, e[s]))
-                                                            end else
+                                                            end
+                                                        else
                                                             r = e[f]; k = t[e[s]]; t[r + 1] = k; t[r] = k[e[c]]; l = l +
-                                                            1; e = n[l];
-                                                        end end end
-                                            else if y ~= 159 then for n = 36, 61 do
+                                                                1; e = n[l];
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if y ~= 159 then
+                                                    for n = 36, 61 do
                                                         if 163 ~= y then
                                                             if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end; break;
                                                         end; local e = e[f]
                                                         t[e](t[e + 1])
                                                         break;
-                                                    end; else if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end; end end else if y <= 158 then t[e[f]][e[s]] =
-                                                e[c]; else if y > 158 then for h = 30, 52 do
+                                                    end;
+                                                else
+                                                    if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end;
+                                                end
+                                            end
+                                        else
+                                            if y <= 158 then
+                                                t[e[f]][e[s]] =
+                                                    e[c];
+                                            else
+                                                if y > 158 then
+                                                    for h = 30, 52 do
                                                         if y > 159 then
                                                             o[e[s]] = t[e[f]]; break;
                                                         end; local b, k, p, _, u, a, y, h; t[e[f]] = o[e[s]]; l = l + 1; e =
-                                                        n[l]; y = 0; while y > -1 do
-                                                            if y >= 4 then if 5 < y then if y > 3 then for e = 34, 85 do
+                                                            n[l]; y = 0; while y > -1 do
+                                                            if y >= 4 then
+                                                                if 5 < y then
+                                                                    if y > 3 then
+                                                                        for e = 34, 85 do
                                                                             if 6 ~= y then
                                                                                 y = -2; break;
                                                                             end; t[a] = u; break;
-                                                                        end; else t[a] = u; end else if 5 == y then a = b
-                                                                        [k]; else u = _[b[p]]; end end else if y <= 1 then if y > -2 then repeat
+                                                                        end;
+                                                                    else
+                                                                        t[a] = u;
+                                                                    end
+                                                                else
+                                                                    if 5 == y then
+                                                                        a = b
+                                                                            [k];
+                                                                    else
+                                                                        u = _[b[p]];
+                                                                    end
+                                                                end
+                                                            else
+                                                                if y <= 1 then
+                                                                    if y > -2 then
+                                                                        repeat
                                                                             if y < 1 then
                                                                                 b = e; break;
                                                                             end; k = f;
-                                                                        until true; else k = f; end else if y ~= 0 then repeat
+                                                                        until true;
+                                                                    else
+                                                                        k = f;
+                                                                    end
+                                                                else
+                                                                    if y ~= 0 then
+                                                                        repeat
                                                                             if y < 3 then
                                                                                 p = s; break;
                                                                             end; _ = t;
-                                                                        until true; else p = s; end end end
+                                                                        until true;
+                                                                    else
+                                                                        p = s;
+                                                                    end
+                                                                end
+                                                            end
                                                             y = y + 1
                                                         end
                                                         l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; h = e
-                                                        [f]
+                                                            [f]
                                                         t[h](d(t, h + 1, e[s]))
                                                         l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; h =
-                                                        e[f]
+                                                            e[f]
                                                         t[h] = t[h]()
                                                         l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; break;
-                                                    end; else o[e[s]] = t[e[f]]; end end end else if 154 >= y then if 152 >= y then t[e[f]][t[e[s]]] =
-                                                e[c]; else if 152 <= y then for d = 27, 57 do
+                                                    end;
+                                                else
+                                                    o[e[s]] = t[e[f]];
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if 154 >= y then
+                                            if 152 >= y then
+                                                t[e[f]][t[e[s]]] =
+                                                    e[c];
+                                            else
+                                                if 152 <= y then
+                                                    for d = 27, 57 do
                                                         if 153 ~= y then
                                                             t[e[f]][e[s]] = t[e[c]]; break;
-                                                        end; local y; for d = 0, 6 do if d >= 3 then if 5 > d then if d > 3 then
+                                                        end; local y; for d = 0, 6 do
+                                                            if d >= 3 then
+                                                                if 5 > d then
+                                                                    if d > 3 then
                                                                         y = e[f]
                                                                         t[y](t[y + 1])
                                                                         l = l + 1; e = n[l];
                                                                     else
                                                                         t(e[f], e[s]); l = l + 1; e = n[l];
-                                                                    end else if d == 6 then t[e[f]] = t[e[s]][e[c]]; else
+                                                                    end
+                                                                else
+                                                                    if d == 6 then
+                                                                        t[e[f]] = t[e[s]][e[c]];
+                                                                    else
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    end end else if 1 > d then
+                                                                    end
+                                                                end
+                                                            else
+                                                                if 1 > d then
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                else if -2 ~= d then for c = 27, 76 do
+                                                                else
+                                                                    if -2 ~= d then
+                                                                        for c = 27, 76 do
                                                                             if d ~= 2 then
                                                                                 y = e[f]
                                                                                 t[y](t[y + 1])
                                                                                 l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                        end; else
+                                                                        end;
+                                                                    else
                                                                         y = e[f]
                                                                         t[y](t[y + 1])
                                                                         l = l + 1; e = n[l];
-                                                                    end end end end
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else
-                                                    local y; for d = 0, 6 do if d >= 3 then if 5 > d then if d > 3 then
+                                                    end;
+                                                else
+                                                    local y; for d = 0, 6 do
+                                                        if d >= 3 then
+                                                            if 5 > d then
+                                                                if d > 3 then
                                                                     y = e[f]
                                                                     t[y](t[y + 1])
                                                                     l = l + 1; e = n[l];
                                                                 else
                                                                     t(e[f], e[s]); l = l + 1; e = n[l];
-                                                                end else if d == 6 then t[e[f]] = t[e[s]][e[c]]; else
+                                                                end
+                                                            else
+                                                                if d == 6 then
+                                                                    t[e[f]] = t[e[s]][e[c]];
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end else if 1 > d then
+                                                                end
+                                                            end
+                                                        else
+                                                            if 1 > d then
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            else if -2 ~= d then for c = 27, 76 do
+                                                            else
+                                                                if -2 ~= d then
+                                                                    for c = 27, 76 do
                                                                         if d ~= 2 then
                                                                             y = e[f]
                                                                             t[y](t[y + 1])
                                                                             l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     y = e[f]
                                                                     t[y](t[y + 1])
                                                                     l = l + 1; e = n[l];
-                                                                end end end end
-                                                end end else if y < 156 then
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if y < 156 then
                                                 local e = e[f]; do return d(t, e, h) end;
-                                            else if 154 < y then repeat
+                                            else
+                                                if 154 < y then
+                                                    repeat
                                                         if y > 156 then
                                                             local y; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                            t[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                                t[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                             t[y](t[y + 1])
                                                             l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                            t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l =
-                                                            l + 1; e = n[l]; if t[e[f]] then l = l + 1; else l = e[s]; end; break;
+                                                                t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]
+                                                            [e[c]]; l =
+                                                                l + 1; e = n[l]; if t[e[f]] then l = l + 1; else l = e
+                                                                [s]; end; break;
                                                         end; t[e[f]] = (e[s] ~= 0); l = l + 1;
-                                                    until true; else
+                                                    until true;
+                                                else
                                                     local y; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                    [e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        [e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y](t[y + 1])
                                                     l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l +
-                                                    1; e = n[l]; if t[e[f]] then l = l + 1; else l = e[s]; end;
-                                                end end end end else if 146 <= y then if 149 <= y then if y >= 150 then if y >= 149 then for d = 26, 52 do
+                                                        t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l =
+                                                        l +
+                                                        1; e = n[l]; if t[e[f]] then l = l + 1; else l = e[s]; end;
+                                                end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if 146 <= y then
+                                        if 149 <= y then
+                                            if y >= 150 then
+                                                if y >= 149 then
+                                                    for d = 26, 52 do
                                                         if 150 ~= y then
                                                             t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e
-                                                            [c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e =
-                                                            n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                            e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e =
-                                                            n[l]; t[e[f]][e[s]] = e[c]; break;
-                                                        end; for c = 0, 3 do if 1 < c then if -1 ~= c then for y = 26, 98 do
+                                                                [c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e =
+                                                                n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] =
+                                                                e[c]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l +
+                                                            1; e =
+                                                                n[l]; t[e[f]][e[s]] = e[c]; break;
+                                                        end; for c = 0, 3 do
+                                                            if 1 < c then
+                                                                if -1 ~= c then
+                                                                    for y = 26, 98 do
                                                                         if 2 ~= c then
                                                                             for e = e[f], e[s] do t[e] = nil; end; break;
                                                                         end; t[e[f]](); l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]](); l = l + 1; e = n[l];
-                                                                end else if c == 0 then
+                                                                end
+                                                            else
+                                                                if c == 0 then
                                                                     o[e[s]] = t[e[f]]; l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                end end end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else for c = 0, 3 do if 1 < c then if -1 ~= c then for y = 26, 98 do
+                                                    end;
+                                                else
+                                                    for c = 0, 3 do
+                                                        if 1 < c then
+                                                            if -1 ~= c then
+                                                                for y = 26, 98 do
                                                                     if 2 ~= c then
                                                                         for e = e[f], e[s] do t[e] = nil; end; break;
                                                                     end; t[e[f]](); l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]](); l = l + 1; e = n[l];
-                                                            end else if c == 0 then
+                                                            end
+                                                        else
+                                                            if c == 0 then
                                                                 o[e[s]] = t[e[f]]; l = l + 1; e = n[l];
                                                             else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end end end end else
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local e = e[f]
                                                 t[e](t[e + 1])
-                                            end else if y < 147 then t[e[f]] = o[e[s]]; else if y > 143 then for o = 13, 82 do
+                                            end
+                                        else
+                                            if y < 147 then
+                                                t[e[f]] = o[e[s]];
+                                            else
+                                                if y > 143 then
+                                                    for o = 13, 82 do
                                                         if 147 ~= y then
                                                             local y; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                            t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l =
-                                                            l + 1; e = n[l]; t[e[f]] = t[e[s]] / t[e[c]]; l = l + 1; e =
-                                                            n[l]; t[e[f]] = e[s] - t[e[c]]; l = l + 1; e = n[l]; t(e[f],
+                                                                t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]
+                                                            [e[c]]; l =
+                                                                l + 1; e = n[l]; t[e[f]] = t[e[s]] / t[e[c]]; l = l + 1; e =
+                                                                n[l]; t[e[f]] = e[s] - t[e[c]]; l = l + 1; e = n[l]; t(
+                                                                e[f],
                                                                 e[s]); l = l + 1; e = n[l]; y = e[f]
                                                             t[y] = t[y](d(t, y + 1, e[s]))
                                                             break;
                                                         end; t[e[f]] = e[s] - t[e[c]]; break;
-                                                    end; else t[e[f]] = e[s] - t[e[c]]; end end end else if y <= 142 then if 140 ~= y then repeat
+                                                    end;
+                                                else
+                                                    t[e[f]] = e[s] - t[e[c]];
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y <= 142 then
+                                            if 140 ~= y then
+                                                repeat
                                                     if y > 141 then
-                                                        local y, b, a, p, r, k; for a = 0, 4 do if 2 <= a then if a <= 2 then
+                                                        local y, b, a, p, r, k; for a = 0, 4 do
+                                                            if 2 <= a then
+                                                                if a <= 2 then
                                                                     y = e[f]
                                                                     k, p = u(t[y](t[y + 1]))
                                                                     h = p + y - 1
                                                                     r = 0; for e = y, h do
                                                                         r = r + 1; t[e] = k[r];
                                                                     end; l = l + 1; e = n[l];
-                                                                else if 2 <= a then repeat
+                                                                else
+                                                                    if 2 <= a then
+                                                                        repeat
                                                                             if 3 < a then
                                                                                 l = e[s]; break;
                                                                             end; y = e[f]
@@ -964,494 +1701,1025 @@
                                                                                 r = r + 1; t[e] = k[r];
                                                                             end
                                                                             l = l + 1; e = n[l];
-                                                                        until true; else
+                                                                        until true;
+                                                                    else
                                                                         y = e[f]
                                                                         k = { t[y](d(t, y + 1, h)) }; r = 0; for e = y, e[c] do
                                                                             r = r + 1; t[e] = k[r];
                                                                         end
                                                                         l = l + 1; e = n[l];
-                                                                    end end else if a > -4 then for d = 27, 76 do
+                                                                    end
+                                                                end
+                                                            else
+                                                                if a > -4 then
+                                                                    for d = 27, 76 do
                                                                         if 0 < a then
                                                                             y = e[f]; b = t[e[s]]; t[y + 1] = b; t[y] = b
-                                                                            [e[c]]; l = l + 1; e = n[l]; break;
+                                                                                [e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     y = e[f]; b = t[e[s]]; t[y + 1] = b; t[y] = b[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                end end end
+                                                                        l + 1; e = n[l];
+                                                                end
+                                                            end
+                                                        end
                                                         break;
                                                     end; t[e[f]] = p(_[e[s]], nil, o);
-                                                until true; else t[e[f]] = p(_[e[s]], nil, o); end else if 144 <= y then if 144 ~= y then
+                                                until true;
+                                            else
+                                                t[e[f]] = p(_[e[s]], nil, o);
+                                            end
+                                        else
+                                            if 144 <= y then
+                                                if 144 ~= y then
                                                     local d, y, b, r, o, a, h, u, k; local n = 0; while n > -1 do
-                                                        if 3 > n then if n > 0 then if n > -1 then for t = 46, 53 do
+                                                        if 3 > n then
+                                                            if n > 0 then
+                                                                if n > -1 then
+                                                                    for t = 46, 53 do
                                                                         if n ~= 2 then
                                                                             y = e; b = l; break;
                                                                         end; r = y[f]; o = y[c]; a = s; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     r = y[f]; o = y[c]; a = s;
-                                                                end else d = t; end else if 4 < n then if 2 <= n then for e = 46, 59 do
+                                                                end
+                                                            else
+                                                                d = t;
+                                                            end
+                                                        else
+                                                            if 4 < n then
+                                                                if 2 <= n then
+                                                                    for e = 46, 59 do
                                                                         if n ~= 6 then
                                                                             l = k; break;
                                                                         end; n = -2; break;
-                                                                    end; else n = -2; end else if n ~= 1 then for e = 42, 91 do
+                                                                    end;
+                                                                else
+                                                                    n = -2;
+                                                                end
+                                                            else
+                                                                if n ~= 1 then
+                                                                    for e = 42, 91 do
                                                                         if n > 3 then
                                                                             k = h == u and y[a] or 1 + b; break;
                                                                         end; h = d[r]; u = d[o]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     h = d[r]; u = d[o];
-                                                                end end end
+                                                                end
+                                                            end
+                                                        end
                                                         n = n + 1
                                                     end
-                                                else if not t[e[f]] then l = l + 1; else l = e[s]; end; end else if (t[e[f]] ~= e[c]) then l =
-                                                    l + 1; else l = e[s]; end; end end end end else if 175 < y then if 181 < y then if y > 184 then if 186 <= y then if y == 187 then l =
-                                                    e[s]; else t[e[f]] = t[e[s]][t[e[c]]]; end else o[e[s]] = t[e[f]]; end else if y >= 183 then if 182 ~= y then repeat
+                                                else
+                                                    if not t[e[f]] then l = l + 1; else l = e[s]; end;
+                                                end
+                                            else
+                                                if (t[e[f]] ~= e[c]) then
+                                                    l =
+                                                        l + 1;
+                                                else
+                                                    l = e[s];
+                                                end;
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                if 175 < y then
+                                    if 181 < y then
+                                        if y > 184 then
+                                            if 186 <= y then
+                                                if y == 187 then
+                                                    l =
+                                                        e[s];
+                                                else
+                                                    t[e[f]] = t[e[s]][t[e[c]]];
+                                                end
+                                            else
+                                                o[e[s]] = t[e[f]];
+                                            end
+                                        else
+                                            if y >= 183 then
+                                                if 182 ~= y then
+                                                    repeat
                                                         if 183 ~= y then
                                                             local e = e[f]
                                                             t[e](d(t, e + 1, h))
                                                             break;
                                                         end; t[e[f]] = (e[s] ~= 0); l = l + 1; e = n[l]; r[e[s]] = t
-                                                        [e[f]]; l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n
-                                                        [l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                        [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l +
-                                                        1; e = n[l]; t[e[f]] = r[e[s]];
-                                                    until true; else
+                                                            [e[f]]; l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e =
+                                                            n
+                                                            [l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
+                                                            t
+                                                            [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l =
+                                                            l +
+                                                            1; e = n[l]; t[e[f]] = r[e[s]];
+                                                    until true;
+                                                else
                                                     t[e[f]] = (e[s] ~= 0); l = l + 1; e = n[l]; r[e[s]] = t[e[f]]; l = l +
-                                                    1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                    [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                    n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = r
-                                                    [e[s]];
-                                                end else
+                                                        1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
+                                                        [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l +
+                                                    1; e =
+                                                        n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = r
+                                                        [e[s]];
+                                                end
+                                            else
                                                 local f = e[f]; local l = t[e[s]]; t[f + 1] = l; t[f] = l[e[c]];
-                                            end end else if 178 >= y then if y >= 177 then if 173 <= y then for o = 40, 75 do
+                                            end
+                                        end
+                                    else
+                                        if 178 >= y then
+                                            if y >= 177 then
+                                                if 173 <= y then
+                                                    for o = 40, 75 do
                                                         if y ~= 177 then
                                                             local y; y = e[f]
                                                             t[y] = t[y](t[y + 1])
                                                             l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                            t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
+                                                                t[e[c]]; l = l + 1; e = n[l]; do return t[e[f]] end
                                                             l = l + 1; e = n[l]; do return end; break;
-                                                        end; local o, r; for y = 0, 6 do if y < 3 then if 0 >= y then
+                                                        end; local o, r; for y = 0, 6 do
+                                                            if y < 3 then
+                                                                if 0 >= y then
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                else if -2 < y then for c = 27, 78 do
+                                                                else
+                                                                    if -2 < y then
+                                                                        for c = 27, 78 do
                                                                             if y > 1 then
                                                                                 o = e[f]
                                                                                 t[o](d(t, o + 1, e[s]))
                                                                                 l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; break;
-                                                                        end; else
+                                                                        end;
+                                                                    else
                                                                         t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                    end end else if y < 5 then if 1 < y then repeat
+                                                                    end
+                                                                end
+                                                            else
+                                                                if y < 5 then
+                                                                    if 1 < y then
+                                                                        repeat
                                                                             if 4 > y then
                                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                                [l]; break;
+                                                                                    [l]; break;
                                                                             end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                                            n[l];
-                                                                        until true; else
+                                                                                n[l];
+                                                                        until true;
+                                                                    else
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                    end else if y ~= 2 then for d = 15, 68 do
+                                                                    end
+                                                                else
+                                                                    if y ~= 2 then
+                                                                        for d = 15, 68 do
                                                                             if y ~= 6 then
                                                                                 o = e[f]; r = t[e[s]]; t[o + 1] = r; t[o] =
-                                                                                r[e[c]]; l = l + 1; e = n[l]; break;
+                                                                                    r[e[c]]; l = l + 1; e = n[l]; break;
                                                                             end; t[e[f]] = t[e[s]]; break;
-                                                                        end; else t[e[f]] = t[e[s]]; end end end end
+                                                                        end;
+                                                                    else
+                                                                        t[e[f]] = t[e[s]];
+                                                                    end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else
-                                                    local o, r; for y = 0, 6 do if y < 3 then if 0 >= y then
+                                                    end;
+                                                else
+                                                    local o, r; for y = 0, 6 do
+                                                        if y < 3 then
+                                                            if 0 >= y then
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            else if -2 < y then for c = 27, 78 do
+                                                            else
+                                                                if -2 < y then
+                                                                    for c = 27, 78 do
                                                                         if y > 1 then
                                                                             o = e[f]
                                                                             t[o](d(t, o + 1, e[s]))
                                                                             l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                end end else if y < 5 then if 1 < y then repeat
+                                                                end
+                                                            end
+                                                        else
+                                                            if y < 5 then
+                                                                if 1 < y then
+                                                                    repeat
                                                                         if 4 > y then
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l];
-                                                                    until true; else
+                                                                            [l];
+                                                                    until true;
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end else if y ~= 2 then for d = 15, 68 do
+                                                                end
+                                                            else
+                                                                if y ~= 2 then
+                                                                    for d = 15, 68 do
                                                                         if y ~= 6 then
                                                                             o = e[f]; r = t[e[s]]; t[o + 1] = r; t[o] = r
-                                                                            [e[c]]; l = l + 1; e = n[l]; break;
+                                                                                [e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]]; break;
-                                                                    end; else t[e[f]] = t[e[s]]; end end end end
-                                                end else
+                                                                    end;
+                                                                else
+                                                                    t[e[f]] = t[e[s]];
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local e = e[f]; do return t[e], t[e + 1] end
-                                            end else if y <= 179 then if (t[e[f]] == t[e[c]]) then l = l + 1; else l = e
-                                                    [s]; end; else if y ~= 180 then for e = e[f], e[s] do t[e] = nil; end; else t[e[f]] = {}; end end end end else if 169 >= y then if y >= 167 then if y > 167 then if 168 < y then for y = 0, 4 do if y >= 2 then if y >= 3 then if 1 ~= y then for d = 29, 62 do
+                                            end
+                                        else
+                                            if y <= 179 then
+                                                if (t[e[f]] == t[e[c]]) then
+                                                    l = l + 1;
+                                                else
+                                                    l = e
+                                                        [s];
+                                                end;
+                                            else
+                                                if y ~= 180 then for e = e[f], e[s] do t[e] = nil; end; else t[e[f]] = {}; end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if 169 >= y then
+                                        if y >= 167 then
+                                            if y > 167 then
+                                                if 168 < y then
+                                                    for y = 0, 4 do
+                                                        if y >= 2 then
+                                                            if y >= 3 then
+                                                                if 1 ~= y then
+                                                                    for d = 29, 62 do
                                                                         if 3 < y then
                                                                             if not t[e[f]] then l = l + 1; else l = e[s]; end; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else if y < 1 then
+                                                            end
+                                                        else
+                                                            if y < 1 then
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                             else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end end end else do return t[e[f]] end end else if (t[e[f]] <= e[c]) then l =
-                                                    l + 1; else l = e[s]; end; end else if 164 < y then if 164 < y then for d = 28, 96 do
+                                                            end
+                                                        end
+                                                    end
+                                                else
+                                                    do return t[e[f]] end
+                                                end
+                                            else
+                                                if (t[e[f]] <= e[c]) then
+                                                    l =
+                                                        l + 1;
+                                                else
+                                                    l = e[s];
+                                                end;
+                                            end
+                                        else
+                                            if 164 < y then
+                                                if 164 < y then
+                                                    for d = 28, 96 do
                                                         if y > 165 then
                                                             local y; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                             t[y] = t[y]()
                                                             l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                            n[l]; y = e[f]
+                                                                n[l]; y = e[f]
                                                             t[y] = t[y]()
                                                             l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                            n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                                n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                             t[y] = t[y]()
                                                             break;
-                                                        end; for y = 0, 4 do if y > 1 then if 2 < y then if y == 3 then
+                                                        end; for y = 0, 4 do
+                                                            if y > 1 then
+                                                                if 2 < y then
+                                                                    if y == 3 then
                                                                         t[e[f]] = t[e[s]] + t[e[c]]; l = l + 1; e = n[l];
-                                                                    else if (e[f] < t[e[c]]) then l = e[s]; else l = l +
-                                                                            1; end; end else
+                                                                    else
+                                                                        if (e[f] < t[e[c]]) then
+                                                                            l = e[s];
+                                                                        else
+                                                                            l = l +
+                                                                                1;
+                                                                        end;
+                                                                    end
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end else if -4 <= y then for d = 15, 61 do
+                                                                end
+                                                            else
+                                                                if -4 <= y then
+                                                                    for d = 15, 61 do
                                                                         if y > 0 then
                                                                             t[e[f]] = t[e[s]] * t[e[c]]; l = l + 1; e = n
-                                                                            [l]; break;
+                                                                                [l]; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else for y = 0, 4 do if y > 1 then if 2 < y then if y == 3 then
+                                                    end;
+                                                else
+                                                    for y = 0, 4 do
+                                                        if y > 1 then
+                                                            if 2 < y then
+                                                                if y == 3 then
                                                                     t[e[f]] = t[e[s]] + t[e[c]]; l = l + 1; e = n[l];
-                                                                else if (e[f] < t[e[c]]) then l = e[s]; else l = l + 1; end; end else
+                                                                else
+                                                                    if (e[f] < t[e[c]]) then l = e[s]; else l = l + 1; end;
+                                                                end
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else if -4 <= y then for d = 15, 61 do
+                                                            end
+                                                        else
+                                                            if -4 <= y then
+                                                                for d = 15, 61 do
                                                                     if y > 0 then
                                                                         t[e[f]] = t[e[s]] * t[e[c]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end end end end else t[e[f]] = t[e[s]] - e[c]; end end else if y <= 172 then if 170 >= y then if (t[e[f]] ~= e[c]) then l =
-                                                    l + 1; else l = e[s]; end; else if 171 == y then r[e[s]] = t[e[f]]; else
-                                                    t[e[f]](); end end else if y >= 174 then if 172 <= y then for d = 36, 78 do
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                t[e[f]] = t[e[s]] - e[c];
+                                            end
+                                        end
+                                    else
+                                        if y <= 172 then
+                                            if 170 >= y then
+                                                if (t[e[f]] ~= e[c]) then
+                                                    l =
+                                                        l + 1;
+                                                else
+                                                    l = e[s];
+                                                end;
+                                            else
+                                                if 171 == y then
+                                                    r[e[s]] = t[e[f]];
+                                                else
+                                                    t[e[f]]();
+                                                end
+                                            end
+                                        else
+                                            if y >= 174 then
+                                                if 172 <= y then
+                                                    for d = 36, 78 do
                                                         if 174 < y then
                                                             local h = _[e[s]]; local d; local y = {}; d = a.imGBTunU({},
-                                                                { __index = function(l, e)
-                                                                    local e = y[e]; return e[1][e[2]];
-                                                                end, __newindex = function(t, e, l)
-                                                                    local e = y[e]
-                                                                    e[1][e[2]] = l;
-                                                                end, }); for f = 1, e[c] do
-                                                                l = l + 1; local e = n[l]; if e[ee] == 95 then y[f - 1] = {
-                                                                        t, e[s] }; else y[f - 1] = { r, e[s] }; end; j[#j + 1] =
-                                                                y;
+                                                                {
+                                                                    __index = function(l, e)
+                                                                        local e = y[e]; return e[1][e[2]];
+                                                                    end,
+                                                                    __newindex = function(t, e, l)
+                                                                        local e = y[e]
+                                                                        e[1][e[2]] = l;
+                                                                    end,
+                                                                }); for f = 1, e[c] do
+                                                                l = l + 1; local e = n[l]; if e[ee] == 95 then
+                                                                    y[f - 1] = {
+                                                                        t, e[s] };
+                                                                else
+                                                                    y[f - 1] = { r, e[s] };
+                                                                end; j[#j + 1] =
+                                                                    y;
                                                             end; t[e[f]] = p(h, d, o); break;
-                                                        end; local d, h, r; for y = 0, 4 do if 1 < y then if y < 3 then
+                                                        end; local d, h, r; for y = 0, 4 do
+                                                            if 1 < y then
+                                                                if y < 3 then
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                else if 4 ~= y then
+                                                                else
+                                                                    if 4 ~= y then
                                                                         d = e[f]
                                                                         h = { t[d](t[d + 1]) }; r = 0; for e = d, e[c] do
                                                                             r = r + 1; t[e] = h[r];
                                                                         end
                                                                         l = l + 1; e = n[l];
-                                                                    else l = e[s]; end end else if y > -2 then for d = 44, 72 do
+                                                                    else
+                                                                        l = e[s];
+                                                                    end
+                                                                end
+                                                            else
+                                                                if y > -2 then
+                                                                    for d = 44, 72 do
                                                                         if 0 ~= y then
                                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]][t[e[s]]] = t[e[c]]; l = l + 1; e = n
-                                                                        [l]; break;
-                                                                    end; else
+                                                                            [l]; break;
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                end end end
+                                                                end
+                                                            end
+                                                        end
                                                         break;
-                                                    end; else
-                                                    local r, h, d; for y = 0, 4 do if 1 < y then if y < 3 then
+                                                    end;
+                                                else
+                                                    local r, h, d; for y = 0, 4 do
+                                                        if 1 < y then
+                                                            if y < 3 then
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            else if 4 ~= y then
+                                                            else
+                                                                if 4 ~= y then
                                                                     r = e[f]
                                                                     h = { t[r](t[r + 1]) }; d = 0; for e = r, e[c] do
                                                                         d = d + 1; t[e] = h[d];
                                                                     end
                                                                     l = l + 1; e = n[l];
-                                                                else l = e[s]; end end else if y > -2 then for d = 44, 72 do
+                                                                else
+                                                                    l = e[s];
+                                                                end
+                                                            end
+                                                        else
+                                                            if y > -2 then
+                                                                for d = 44, 72 do
                                                                     if 0 ~= y then
                                                                         t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]][t[e[s]]] = t[e[c]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end end end
-                                                end else
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local l = e[f]
                                                 local f, e = u(t[l](d(t, l + 1, e[s])))
                                                 h = e + l - 1
                                                 local e = 0; for l = l, h do
                                                     e = e + 1; t[l] = f[e];
                                                 end;
-                                            end end end end end end else if y >= 47 then if 70 <= y then if 81 < y then if 87 < y then if 91 > y then if y >= 89 then if 89 == y then l =
-                                                    e[s]; else t[e[f]] = (e[s] ~= 0); end else if not t[e[f]] then l = l +
-                                                    1; else l = e[s]; end; end else if y < 92 then for e = e[f], e[s] do t[e] = nil; end; else if 88 < y then for d = 35, 76 do
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    else
+                        if y >= 47 then
+                            if 70 <= y then
+                                if 81 < y then
+                                    if 87 < y then
+                                        if 91 > y then
+                                            if y >= 89 then
+                                                if 89 == y then
+                                                    l =
+                                                        e[s];
+                                                else
+                                                    t[e[f]] = (e[s] ~= 0);
+                                                end
+                                            else
+                                                if not t[e[f]] then
+                                                    l = l +
+                                                        1;
+                                                else
+                                                    l = e[s];
+                                                end;
+                                            end
+                                        else
+                                            if y < 92 then
+                                                for e = e[f], e[s] do t[e] = nil; end;
+                                            else
+                                                if 88 < y then
+                                                    for d = 35, 76 do
                                                         if 92 < y then
                                                             local d, b, h, k, a, u, y, r; t[e[f]] = o[e[s]]; l = l + 1; e =
-                                                            n[l]; y = 0; while y > -1 do
-                                                                if 3 < y then if 5 < y then if 4 ~= y then repeat
+                                                                n[l]; y = 0; while y > -1 do
+                                                                if 3 < y then
+                                                                    if 5 < y then
+                                                                        if 4 ~= y then
+                                                                            repeat
                                                                                 if 6 ~= y then
                                                                                     y = -2; break;
                                                                                 end; t[u] = a;
-                                                                            until true; else t[u] = a; end else if 4 == y then a =
-                                                                            k[d[h]]; else u = d[b]; end end else if 1 >= y then if y > -1 then repeat
+                                                                            until true;
+                                                                        else
+                                                                            t[u] = a;
+                                                                        end
+                                                                    else
+                                                                        if 4 == y then
+                                                                            a =
+                                                                                k[d[h]];
+                                                                        else
+                                                                            u = d[b];
+                                                                        end
+                                                                    end
+                                                                else
+                                                                    if 1 >= y then
+                                                                        if y > -1 then
+                                                                            repeat
                                                                                 if y ~= 1 then
                                                                                     d = e; break;
                                                                                 end; b = f;
-                                                                            until true; else d = e; end else if y ~= -2 then repeat
+                                                                            until true;
+                                                                        else
+                                                                            d = e;
+                                                                        end
+                                                                    else
+                                                                        if y ~= -2 then
+                                                                            repeat
                                                                                 if 2 ~= y then
                                                                                     k = t; break;
                                                                                 end; h = s;
-                                                                            until true; else h = s; end end end
+                                                                            until true;
+                                                                        else
+                                                                            h = s;
+                                                                        end
+                                                                    end
+                                                                end
                                                                 y = y + 1
                                                             end
                                                             l = l + 1; e = n[l]; r = e[f]
                                                             t[r](t[r + 1])
                                                             l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                            n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                            o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; break;
+                                                                n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
+                                                                o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; break;
                                                         end; t[e[f]] = t[e[s]] + t[e[c]]; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local d, b, u, k, h, r, y, a; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; y = 0; while y > -1 do
-                                                        if 3 < y then if 5 < y then if 4 ~= y then repeat
+                                                        if 3 < y then
+                                                            if 5 < y then
+                                                                if 4 ~= y then
+                                                                    repeat
                                                                         if 6 ~= y then
                                                                             y = -2; break;
                                                                         end; t[r] = h;
-                                                                    until true; else t[r] = h; end else if 4 == y then h =
-                                                                    k[d[u]]; else r = d[b]; end end else if 1 >= y then if y > -1 then repeat
+                                                                    until true;
+                                                                else
+                                                                    t[r] = h;
+                                                                end
+                                                            else
+                                                                if 4 == y then
+                                                                    h =
+                                                                        k[d[u]];
+                                                                else
+                                                                    r = d[b];
+                                                                end
+                                                            end
+                                                        else
+                                                            if 1 >= y then
+                                                                if y > -1 then
+                                                                    repeat
                                                                         if y ~= 1 then
                                                                             d = e; break;
                                                                         end; b = f;
-                                                                    until true; else d = e; end else if y ~= -2 then repeat
+                                                                    until true;
+                                                                else
+                                                                    d = e;
+                                                                end
+                                                            else
+                                                                if y ~= -2 then
+                                                                    repeat
                                                                         if 2 ~= y then
                                                                             k = t; break;
                                                                         end; u = s;
-                                                                    until true; else u = s; end end end
+                                                                    until true;
+                                                                else
+                                                                    u = s;
+                                                                end
+                                                            end
+                                                        end
                                                         y = y + 1
                                                     end
                                                     l = l + 1; e = n[l]; a = e[f]
                                                     t[a](t[a + 1])
                                                     l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                    t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]];
-                                                end end end else if y < 85 then if 83 <= y then if 83 == y then
+                                                        t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n
+                                                    [l]; t[e[f]] =
+                                                        t[e[s]];
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y < 85 then
+                                            if 83 <= y then
+                                                if 83 == y then
                                                     local y, o; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o =
-                                                    t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
+                                                        t[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y](d(t, y + 1, e[s]))
                                                     l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t[e[s]]; t[y + 1] =
-                                                    o; t[y] = o[e[c]];
-                                                else t[e[f]] = t[e[s]] / t[e[c]]; end else t[e[f]] = t[e[s]] + t[e[c]]; end else if 86 <= y then if y == 87 then t[e[f]] =
-                                                    e[s] - t[e[c]]; else
-                                                    local y, h; for r = 0, 6 do if 3 <= r then if r < 5 then if r == 3 then
+                                                        t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t[e[s]]; t[y + 1] =
+                                                        o; t[y] = o[e[c]];
+                                                else
+                                                    t[e[f]] = t[e[s]] / t[e[c]];
+                                                end
+                                            else
+                                                t[e[f]] = t[e[s]] + t[e[c]];
+                                            end
+                                        else
+                                            if 86 <= y then
+                                                if y == 87 then
+                                                    t[e[f]] =
+                                                        e[s] - t[e[c]];
+                                                else
+                                                    local y, h; for r = 0, 6 do
+                                                        if 3 <= r then
+                                                            if r < 5 then
+                                                                if r == 3 then
                                                                     t(e[f], e[s]); l = l + 1; e = n[l];
                                                                 else
                                                                     y = e[f]
                                                                     t[y](d(t, y + 1, e[s]))
                                                                     l = l + 1; e = n[l];
-                                                                end else if r ~= 4 then repeat
+                                                                end
+                                                            else
+                                                                if r ~= 4 then
+                                                                    repeat
                                                                         if r ~= 5 then
                                                                             t(e[f], e[s]); break;
                                                                         end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                    until true; else
+                                                                    until true;
+                                                                else
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                end end else if 1 <= r then if r >= -3 then repeat
+                                                                end
+                                                            end
+                                                        else
+                                                            if 1 <= r then
+                                                                if r >= -3 then
+                                                                    repeat
                                                                         if 1 ~= r then
                                                                             t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                         end; y = e[f]; h = t[e[s]]; t[y + 1] = h; t[y] =
-                                                                        h[e[c]]; l = l + 1; e = n[l];
-                                                                    until true; else
+                                                                            h[e[c]]; l = l + 1; e = n[l];
+                                                                    until true;
+                                                                else
                                                                     y = e[f]; h = t[e[s]]; t[y + 1] = h; t[y] = h[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                end else
+                                                                        l + 1; e = n[l];
+                                                                end
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end end end
-                                                end else for y = 0, 3 do if 1 >= y then if -4 < y then repeat
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                for y = 0, 3 do
+                                                    if 1 >= y then
+                                                        if -4 < y then
+                                                            repeat
                                                                 if 0 ~= y then
                                                                     o[e[s]] = t[e[f]]; l = l + 1; e = n[l]; break;
                                                                 end; t[e[f]] = (e[s] ~= 0); l = l + 1; e = n[l];
-                                                            until true; else
+                                                            until true;
+                                                        else
                                                             o[e[s]] = t[e[f]]; l = l + 1; e = n[l];
-                                                        end else if y > -2 then for d = 48, 92 do
+                                                        end
+                                                    else
+                                                        if y > -2 then
+                                                            for d = 48, 92 do
                                                                 if 2 < y then
                                                                     if (t[e[f]] ~= e[c]) then l = l + 1; else l = e[s]; end; break;
                                                                 end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                            end; else
+                                                            end;
+                                                        else
                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                        end end end end end end else if 75 < y then if y < 79 then if y < 77 then
-                                                local h; for y = 0, 6 do if y > 2 then if 4 < y then if y == 5 then
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if 75 < y then
+                                        if y < 79 then
+                                            if y < 77 then
+                                                local h; for y = 0, 6 do
+                                                    if y > 2 then
+                                                        if 4 < y then
+                                                            if y == 5 then
                                                                 t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                            else t[e[f]] = t[e[s]][e[c]]; end else if y >= 0 then for o = 36, 81 do
+                                                            else
+                                                                t[e[f]] = t[e[s]][e[c]];
+                                                            end
+                                                        else
+                                                            if y >= 0 then
+                                                                for o = 36, 81 do
                                                                     if 3 < y then
                                                                         t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; break;
                                                                     end; h = e[f]
                                                                     t[h] = t[h](d(t, h + 1, e[s]))
                                                                     l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                            end end else if 1 <= y then if y >= -2 then for c = 19, 76 do
+                                                            end
+                                                        end
+                                                    else
+                                                        if 1 <= y then
+                                                            if y >= -2 then
+                                                                for c = 19, 76 do
                                                                     if y < 2 then
                                                                         t[e[f]] = {}; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                        end end end
-                                            else if 74 ~= y then repeat
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if 74 ~= y then
+                                                    repeat
                                                         if 77 < y then
                                                             local y; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                            [e[s]][e[c]]; l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e =
-                                                            n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                                [e[s]][e[c]]; l = l + 1; e = n[l]; t(e[f], e[s]); l = l +
+                                                            1; e =
+                                                                n[l]; t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                             t[y] = t[y](d(t, y + 1, e[s]))
                                                             l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n
-                                                            [l]; do return end; break;
+                                                                [l]; do return end; break;
                                                         end; local y, o; y = e[f]; o = t[e[s]]; t[y + 1] = o; t[y] = o
-                                                        [e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n
-                                                        [l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]; do return
-                                                            t[y](d(t, y + 1, e[s])) end; l = l + 1; e = n[l]; y = e[f]; do return
-                                                            d(t, y, h) end; l = l + 1; e = n[l]; do return end;
-                                                    until true; else
+                                                            [e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e =
+                                                            n
+                                                            [l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]; do
+                                                            return
+                                                                t[y](d(t, y + 1, e[s]))
+                                                        end; l = l + 1; e = n[l]; y = e[f]; do
+                                                            return
+                                                                d(t, y, h)
+                                                        end; l = l + 1; e = n[l]; do return end;
+                                                    until true;
+                                                else
                                                     local y; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]
-                                                    [e[c]]; l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; t[e[f]] =
-                                                    r[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        [e[c]]; l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; t[e[f]] =
+                                                        r[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
                                                     l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l]; do return end;
-                                                end end else if 80 <= y then if y == 80 then t[e[f]][e[s]] = t[e[c]]; else
+                                                end
+                                            end
+                                        else
+                                            if 80 <= y then
+                                                if y == 80 then
+                                                    t[e[f]][e[s]] = t[e[c]];
+                                                else
                                                     local y, r; y = e[f]; r = t[e[s]]; t[y + 1] = r; t[y] = r[e[c]]; l =
-                                                    l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
+                                                        l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
                                                     l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; y = e
-                                                    [f]; r = t[e[s]]; t[y + 1] = r; t[y] = r[e[c]]; l = l + 1; e = n[l]; t(
-                                                    e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
+                                                        [f]; r = t[e[s]]; t[y + 1] = r; t[y] = r[e[c]]; l = l + 1; e = n
+                                                    [l]; t(
+                                                        e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
-                                                end else
-                                                local n = t[e[c]]; if not n then l = l + 1; else
+                                                end
+                                            else
+                                                local n = t[e[c]]; if not n then
+                                                    l = l + 1;
+                                                else
                                                     t[e[f]] = n; l = e[s];
                                                 end;
-                                            end end else if 73 <= y then if y > 73 then if 73 <= y then for d = 45, 81 do
+                                            end
+                                        end
+                                    else
+                                        if 73 <= y then
+                                            if y > 73 then
+                                                if 73 <= y then
+                                                    for d = 45, 81 do
                                                         if 75 ~= y then
-                                                            local r, h, d; for y = 0, 6 do if 3 <= y then if 5 > y then if 3 == y then
+                                                            local r, h, d; for y = 0, 6 do
+                                                                if 3 <= y then
+                                                                    if 5 > y then
+                                                                        if 3 == y then
                                                                             t[e[f]] = {}; l = l + 1; e = n[l];
                                                                         else
                                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                        end else if y ~= 4 then for o = 28, 85 do
+                                                                        end
+                                                                    else
+                                                                        if y ~= 4 then
+                                                                            for o = 28, 85 do
                                                                                 if 6 > y then
                                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                                                    n[l]; break;
+                                                                                        n[l]; break;
                                                                                 end; r = e[f]
                                                                                 h = { t[r](t[r + 1]) }; d = 0; for e = r, e[c] do
                                                                                     d = d + 1; t[e] = h[d];
                                                                                 end
                                                                                 break;
-                                                                            end; else
+                                                                            end;
+                                                                        else
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                        end end else if 1 > y then
+                                                                        end
+                                                                    end
+                                                                else
+                                                                    if 1 > y then
                                                                         t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                    else if 2 > y then
+                                                                    else
+                                                                        if 2 > y then
                                                                             t[e[f]] = {}; l = l + 1; e = n[l];
                                                                         else
                                                                             t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
-                                                                        end end end end
+                                                                        end
+                                                                    end
+                                                                end
+                                                            end
                                                             break;
                                                         end; local n, y, d, o, c; local l = 0; while l > -1 do
-                                                            if 3 > l then if l > 0 then if -2 ~= l then for e = 35, 74 do
+                                                            if 3 > l then
+                                                                if l > 0 then
+                                                                    if -2 ~= l then
+                                                                        for e = 35, 74 do
                                                                             if 1 ~= l then
                                                                                 d = s; break;
                                                                             end; y = f; break;
-                                                                        end; else d = s; end else n = e; end else if l <= 4 then if l >= 1 then for e = 21, 84 do
+                                                                        end;
+                                                                    else
+                                                                        d = s;
+                                                                    end
+                                                                else
+                                                                    n = e;
+                                                                end
+                                                            else
+                                                                if l <= 4 then
+                                                                    if l >= 1 then
+                                                                        for e = 21, 84 do
                                                                             if 3 < l then
                                                                                 c = n[y]; break;
                                                                             end; o = n[d]; break;
-                                                                        end; else c = n[y]; end else if 1 ~= l then for e = 28, 75 do
+                                                                        end;
+                                                                    else
+                                                                        c = n[y];
+                                                                    end
+                                                                else
+                                                                    if 1 ~= l then
+                                                                        for e = 28, 75 do
                                                                             if 6 ~= l then
                                                                                 t(c, o); break;
                                                                             end; l = -2; break;
-                                                                        end; else l = -2; end end end
+                                                                        end;
+                                                                    else
+                                                                        l = -2;
+                                                                    end
+                                                                end
+                                                            end
                                                             l = l + 1
                                                         end
                                                         break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local n, y, c, o, d; local l = 0; while l > -1 do
-                                                        if 3 > l then if l > 0 then if -2 ~= l then for e = 35, 74 do
+                                                        if 3 > l then
+                                                            if l > 0 then
+                                                                if -2 ~= l then
+                                                                    for e = 35, 74 do
                                                                         if 1 ~= l then
                                                                             c = s; break;
                                                                         end; y = f; break;
-                                                                    end; else c = s; end else n = e; end else if l <= 4 then if l >= 1 then for e = 21, 84 do
+                                                                    end;
+                                                                else
+                                                                    c = s;
+                                                                end
+                                                            else
+                                                                n = e;
+                                                            end
+                                                        else
+                                                            if l <= 4 then
+                                                                if l >= 1 then
+                                                                    for e = 21, 84 do
                                                                         if 3 < l then
                                                                             d = n[y]; break;
                                                                         end; o = n[c]; break;
-                                                                    end; else d = n[y]; end else if 1 ~= l then for e = 28, 75 do
+                                                                    end;
+                                                                else
+                                                                    d = n[y];
+                                                                end
+                                                            else
+                                                                if 1 ~= l then
+                                                                    for e = 28, 75 do
                                                                         if 6 ~= l then
                                                                             t(d, o); break;
                                                                         end; l = -2; break;
-                                                                    end; else l = -2; end end end
+                                                                    end;
+                                                                else
+                                                                    l = -2;
+                                                                end
+                                                            end
+                                                        end
                                                         l = l + 1
                                                     end
-                                                end else
+                                                end
+                                            else
                                                 local l = e[f]
                                                 local f, e = u(t[l](d(t, l + 1, e[s])))
                                                 h = e + l - 1
                                                 local e = 0; for l = l, h do
                                                     e = e + 1; t[l] = f[e];
                                                 end;
-                                            end else if y >= 71 then if y == 71 then t[e[f]] = r[e[s]]; else
+                                            end
+                                        else
+                                            if y >= 71 then
+                                                if y == 71 then
+                                                    t[e[f]] = r[e[s]];
+                                                else
                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] *
-                                                    t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] + t[e[c]]; l = l + 1; e =
-                                                    n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                    [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
-                                                    n[l]; if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end;
-                                                end else
+                                                        t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] + t[e[c]]; l = l +
+                                                    1; e =
+                                                        n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = t
+                                                        [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l +
+                                                    1; e =
+                                                        n[l]; if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end;
+                                                end
+                                            else
                                                 local e = e[f]
                                                 t[e] = t[e](d(t, e + 1, h))
-                                            end end end end else if y >= 58 then if y < 64 then if y > 60 then if y > 61 then if y > 62 then
-                                                    local c; for y = 0, 4 do if y >= 2 then if y >= 3 then if y > 1 then for d = 23, 83 do
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                if y >= 58 then
+                                    if y < 64 then
+                                        if y > 60 then
+                                            if y > 61 then
+                                                if y > 62 then
+                                                    local c; for y = 0, 4 do
+                                                        if y >= 2 then
+                                                            if y >= 3 then
+                                                                if y > 1 then
+                                                                    for d = 23, 83 do
                                                                         if y > 3 then
                                                                             l = e[s]; break;
                                                                         end; c = e[f]
                                                                         t[c](t[c + 1])
                                                                         l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     c = e[f]
                                                                     t[c](t[c + 1])
                                                                     l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 for e = e[f], e[s] do t[e] = nil; end; l = l + 1; e = n
-                                                                [l];
-                                                            end else if y == 1 then
+                                                                    [l];
+                                                            end
+                                                        else
+                                                            if y == 1 then
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
                                                             else
                                                                 r[e[s]] = t[e[f]]; l = l + 1; e = n[l];
-                                                            end end end
+                                                            end
+                                                        end
+                                                    end
                                                 else
                                                     local f = e[f]
                                                     local s = { t[f](d(t, f + 1, e[s])) }; local l = 0; for e = f, e[c] do
                                                         l = l + 1; t[e] = s[l];
                                                     end
-                                                end else
+                                                end
+                                            else
                                                 local e = e[f]
                                                 t[e](d(t, e + 1, h))
-                                            end else if y < 59 then
+                                            end
+                                        else
+                                            if y < 59 then
                                                 local e = e[f]; h = e + g - 1; for l = e, h do
                                                     local e = m[l - e]; t[l] = e;
                                                 end;
-                                            else if 58 ~= y then repeat
+                                            else
+                                                if 58 ~= y then
+                                                    repeat
                                                         if y < 60 then
                                                             local l = e[f]
                                                             t[l](d(t, l + 1, e[s]))
                                                             break;
                                                         end; local l = e[f]
                                                         t[l] = t[l](d(t, l + 1, e[s]))
-                                                    until true; else
+                                                    until true;
+                                                else
                                                     local l = e[f]
                                                     t[l] = t[l](d(t, l + 1, e[s]))
-                                                end end end else if 67 > y then if 65 > y then
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if 67 > y then
+                                            if 65 > y then
                                                 local l = e[f]; do return d(t, l, l + e[s]) end;
-                                            else if y > 63 then for l = 48, 95 do
+                                            else
+                                                if y > 63 then
+                                                    for l = 48, 95 do
                                                         if y > 65 then
                                                             local l = e[f]
                                                             local s = { t[l](t[l + 1]) }; local f = 0; for e = l, e[c] do
@@ -1459,65 +2727,117 @@
                                                             end
                                                             break;
                                                         end; t[e[f]] = t[e[s]] % t[e[c]]; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local l = e[f]
                                                     local s = { t[l](t[l + 1]) }; local f = 0; for e = l, e[c] do
                                                         f = f + 1; t[e] = s[f];
                                                     end
-                                                end end else if 67 < y then if 69 > y then
+                                                end
+                                            end
+                                        else
+                                            if 67 < y then
+                                                if 69 > y then
                                                     local f = e[f]; local c = e[c]; local n = f + 2
                                                     local f = { t[f](t[f + 1], t[n]) }; for e = 1, c do t[n + e] = f[e]; end; local f =
-                                                    f[1]
+                                                        f[1]
                                                     if f then
                                                         t[n] = f
                                                         l = e[s];
-                                                    else l = l + 1; end;
-                                                else if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end; end else
-                                                local y; for c = 0, 6 do if c >= 3 then if c >= 5 then if c >= 3 then for o = 11, 58 do
+                                                    else
+                                                        l = l + 1;
+                                                    end;
+                                                else
+                                                    if (t[e[f]] <= t[e[c]]) then l = e[s]; else l = l + 1; end;
+                                                end
+                                            else
+                                                local y; for c = 0, 6 do
+                                                    if c >= 3 then
+                                                        if c >= 5 then
+                                                            if c >= 3 then
+                                                                for o = 11, 58 do
                                                                     if c ~= 5 then
                                                                         y = e[f]
                                                                         t[y] = t[y](d(t, y + 1, e[s]))
                                                                         break;
                                                                     end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            end else if c >= 0 then repeat
+                                                            end
+                                                        else
+                                                            if c >= 0 then
+                                                                repeat
                                                                     if 4 ~= c then
                                                                         t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                until true; else
+                                                                until true;
+                                                            else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end end else if c >= 1 then if c > -3 then for o = 34, 58 do
+                                                            end
+                                                        end
+                                                    else
+                                                        if c >= 1 then
+                                                            if c > -3 then
+                                                                for o = 34, 58 do
                                                                     if c < 2 then
                                                                         t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; break;
                                                                     end; y = e[f]
                                                                     t[y] = t[y](d(t, y + 1, e[s]))
                                                                     l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                        end end end
-                                            end end end else if y >= 52 then if 55 <= y then if y <= 55 then
-                                                local y, d; for o = 0, 1 do if 0 == o then
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if y >= 52 then
+                                        if 55 <= y then
+                                            if y <= 55 then
+                                                local y, d; for o = 0, 1 do
+                                                    if 0 == o then
                                                         y = e[f]; d = t[e[s]]; t[y + 1] = d; t[y] = d[e[c]]; l = l + 1; e =
-                                                        n[l];
+                                                            n[l];
                                                     else
                                                         y = e[f]
                                                         t[y] = t[y](t[y + 1])
-                                                    end end
-                                            else if 56 < y then
+                                                    end
+                                                end
+                                            else
+                                                if 56 < y then
                                                     local e = e[f]
                                                     t[e] = t[e](t[e + 1])
-                                                else t[e[f]] = t[e[s]] / e[c]; end end else if 53 > y then
-                                                local c; for y = 0, 4 do if 2 <= y then if y > 2 then if y > 2 then for c = 18, 90 do
+                                                else
+                                                    t[e[f]] = t[e[s]] / e[c];
+                                                end
+                                            end
+                                        else
+                                            if 53 > y then
+                                                local c; for y = 0, 4 do
+                                                    if 2 <= y then
+                                                        if y > 2 then
+                                                            if y > 2 then
+                                                                for c = 18, 90 do
                                                                     if 4 ~= y then
                                                                         for e = e[f], e[s] do t[e] = nil; end; l = l + 1; e =
-                                                                        n[l]; break;
+                                                                            n[l]; break;
                                                                     end; l = e[s]; break;
-                                                                end; else l = e[s]; end else
+                                                                end;
+                                                            else
+                                                                l = e[s];
+                                                            end
+                                                        else
                                                             t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                        end else if 1 > y then
+                                                        end
+                                                    else
+                                                        if 1 > y then
                                                             c = e[f]
                                                             t[c] = t[c](d(t, c + 1, h))
                                                             l = l + 1; e = n[l];
@@ -1525,371 +2845,738 @@
                                                             c = e[f]
                                                             t[c] = t[c]()
                                                             l = l + 1; e = n[l];
-                                                        end end end
-                                            else if 49 ~= y then for l = 35, 84 do
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if 49 ~= y then
+                                                    for l = 35, 84 do
                                                         if 53 ~= y then
                                                             do return end; break;
                                                         end; local l = e[f]; do return t[l](d(t, l + 1, e[s])) end; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local l = e[f]; do return t[l](d(t, l + 1, e[s])) end;
-                                                end end end else if 48 < y then if 50 > y then
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if 48 < y then
+                                            if 50 > y then
                                                 local h = _[e[s]]; local d; local y = {}; d = a.imGBTunU({},
-                                                    { __index = function(l, e)
-                                                        local e = y[e]; return e[1][e[2]];
-                                                    end, __newindex = function(t, e, l)
-                                                        local e = y[e]
-                                                        e[1][e[2]] = l;
-                                                    end, }); for f = 1, e[c] do
-                                                    l = l + 1; local e = n[l]; if e[ee] == 95 then y[f - 1] = { t, e[s] }; else y[f - 1] = {
-                                                            r, e[s] }; end; j[#j + 1] = y;
+                                                    {
+                                                        __index = function(l, e)
+                                                            local e = y[e]; return e[1][e[2]];
+                                                        end,
+                                                        __newindex = function(t, e, l)
+                                                            local e = y[e]
+                                                            e[1][e[2]] = l;
+                                                        end,
+                                                    }); for f = 1, e[c] do
+                                                    l = l + 1; local e = n[l]; if e[ee] == 95 then
+                                                        y[f - 1] = { t, e[s] };
+                                                    else
+                                                        y[f - 1] = {
+                                                            r, e[s] };
+                                                    end; j[#j + 1] = y;
                                                 end; t[e[f]] = p(h, d, o);
-                                            else if 50 ~= y then t[e[f]] = t[e[s]] * t[e[c]]; else
+                                            else
+                                                if 50 ~= y then
+                                                    t[e[f]] = t[e[s]] * t[e[c]];
+                                                else
                                                     local f = e[f]; local c = e[c]; local n = f + 2
                                                     local f = { t[f](t[f + 1], t[n]) }; for e = 1, c do t[n + e] = f[e]; end; local f =
-                                                    f[1]
+                                                        f[1]
                                                     if f then
                                                         t[n] = f
                                                         l = e[s];
-                                                    else l = l + 1; end;
-                                                end end else if 44 ~= y then repeat
+                                                    else
+                                                        l = l + 1;
+                                                    end;
+                                                end
+                                            end
+                                        else
+                                            if 44 ~= y then
+                                                repeat
                                                     if 48 > y then
                                                         if (e[f] < t[e[c]]) then l = e[s]; else l = l + 1; end; break;
                                                     end; if (t[e[f]] <= t[e[c]]) then l = l + 1; else l = e[s]; end;
-                                                until true; else if (e[f] < t[e[c]]) then l = e[s]; else l = l + 1; end; end end end end end else if 22 < y then if 34 < y then if y > 40 then if y >= 44 then if 44 >= y then
-                                                local y, d; for o = 0, 4 do if o > 1 then if o > 2 then if o >= 0 then repeat
+                                                until true;
+                                            else
+                                                if (e[f] < t[e[c]]) then l = e[s]; else l = l + 1; end;
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            if 22 < y then
+                                if 34 < y then
+                                    if y > 40 then
+                                        if y >= 44 then
+                                            if 44 >= y then
+                                                local y, d; for o = 0, 4 do
+                                                    if o > 1 then
+                                                        if o > 2 then
+                                                            if o >= 0 then
+                                                                repeat
                                                                     if 4 > o then
                                                                         y = e[f]; d = t[e[s]]; t[y + 1] = d; t[y] = d
-                                                                        [e[c]]; l = l + 1; e = n[l]; break;
+                                                                            [e[c]]; l = l + 1; e = n[l]; break;
                                                                     end; y = e[f]
                                                                     t[y](t[y + 1])
-                                                                until true; else
+                                                                until true;
+                                                            else
                                                                 y = e[f]
                                                                 t[y](t[y + 1])
-                                                            end else
+                                                            end
+                                                        else
                                                             y = e[f]
                                                             t[y](t[y + 1])
                                                             l = l + 1; e = n[l];
-                                                        end else if o >= -1 then for r = 30, 81 do
+                                                        end
+                                                    else
+                                                        if o >= -1 then
+                                                            for r = 30, 81 do
                                                                 if o ~= 1 then
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
                                                                 end; y = e[f]; d = t[e[s]]; t[y + 1] = d; t[y] = d[e[c]]; l =
-                                                                l + 1; e = n[l]; break;
-                                                            end; else
+                                                                    l + 1; e = n[l]; break;
+                                                            end;
+                                                        else
                                                             y = e[f]; d = t[e[s]]; t[y + 1] = d; t[y] = d[e[c]]; l = l +
-                                                            1; e = n[l];
-                                                        end end end
-                                            else if 45 == y then t[e[f]] = t[e[s]] % t[e[c]]; else
-                                                    local y, o; for r = 0, 2 do if r >= 1 then if r ~= 1 then
+                                                                1; e = n[l];
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if 45 == y then
+                                                    t[e[f]] = t[e[s]] % t[e[c]];
+                                                else
+                                                    local y, o; for r = 0, 2 do
+                                                        if r >= 1 then
+                                                            if r ~= 1 then
                                                                 y = e[f]; o = t[e[s]]; t[y + 1] = o; t[y] = o[e[c]];
                                                             else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             y = e[f]
                                                             t[y](d(t, y + 1, e[s]))
                                                             l = l + 1; e = n[l];
-                                                        end end
-                                                end end else if 41 >= y then t[e[f]] = r[e[s]]; else if y == 42 then
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if 41 >= y then
+                                                t[e[f]] = r[e[s]];
+                                            else
+                                                if y == 42 then
                                                     local l = e[f]
                                                     t[l](d(t, l + 1, e[s]))
-                                                else if t[e[f]] then l = l + 1; else l = e[s]; end; end end end else if y > 37 then if 38 >= y then for y = 0, 3 do if y < 2 then if 0 ~= y then
+                                                else
+                                                    if t[e[f]] then l = l + 1; else l = e[s]; end;
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y > 37 then
+                                            if 38 >= y then
+                                                for y = 0, 3 do
+                                                    if y < 2 then
+                                                        if 0 ~= y then
                                                             t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l];
                                                         else
                                                             t[e[f]] = {}; l = l + 1; e = n[l];
-                                                        end else if 2 ~= y then t[e[f]] = (e[s] ~= 0); else
+                                                        end
+                                                    else
+                                                        if 2 ~= y then
+                                                            t[e[f]] = (e[s] ~= 0);
+                                                        else
                                                             t[e[f]][e[s]] = e[c]; l = l + 1; e = n[l];
-                                                        end end end else if y < 40 then if (e[f] < t[e[c]]) then l = e
-                                                        [s]; else l = l + 1; end; else t[e[f]] = t[e[s]] + e[c]; end end else if 36 > y then t[e[f]][t[e[s]]] =
-                                                t[e[c]]; else if y >= 35 then for c = 43, 96 do
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if y < 40 then
+                                                    if (e[f] < t[e[c]]) then
+                                                        l = e
+                                                            [s];
+                                                    else
+                                                        l = l + 1;
+                                                    end;
+                                                else
+                                                    t[e[f]] = t[e[s]] + e[c];
+                                                end
+                                            end
+                                        else
+                                            if 36 > y then
+                                                t[e[f]][t[e[s]]] =
+                                                    t[e[c]];
+                                            else
+                                                if y >= 35 then
+                                                    for c = 43, 96 do
                                                         if y < 37 then
-                                                            local c; for y = 0, 1 do if y >= -3 then for d = 14, 55 do
+                                                            local c; for y = 0, 1 do
+                                                                if y >= -3 then
+                                                                    for d = 14, 55 do
                                                                         if y > 0 then
                                                                             c = e[f]
                                                                             t[c] = t[c]()
                                                                             break;
                                                                         end; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                end end
+                                                                end
+                                                            end
                                                             break;
                                                         end; local l = e[f]
                                                         t[l] = t[l](d(t, l + 1, e[s]))
                                                         break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local l = e[f]
                                                     t[l] = t[l](d(t, l + 1, e[s]))
-                                                end end end end else if y <= 28 then if y > 25 then if 27 > y then t[e[f]] =
-                                                t[e[s]][t[e[c]]]; else if 25 ~= y then repeat
+                                                end
+                                            end
+                                        end
+                                    end
+                                else
+                                    if y <= 28 then
+                                        if y > 25 then
+                                            if 27 > y then
+                                                t[e[f]] =
+                                                    t[e[s]][t[e[c]]];
+                                            else
+                                                if 25 ~= y then
+                                                    repeat
                                                         if y ~= 28 then
                                                             local y, o; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                            t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t[e[s]]; t[y + 1] =
-                                                            o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] = r[e[s]]; l =
-                                                            l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                            [l]; y = e[f]
+                                                                t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o = t
+                                                            [e[s]]; t[y + 1] =
+                                                                o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] = r
+                                                            [e[s]]; l =
+                                                                l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
+                                                                n
+                                                                [l]; y = e[f]
                                                             t[y](d(t, y + 1, e[s]))
                                                             break;
-                                                        end; local o; for y = 0, 4 do if 1 < y then if y >= 3 then if y < 4 then
+                                                        end; local o; for y = 0, 4 do
+                                                            if 1 < y then
+                                                                if y >= 3 then
+                                                                    if y < 4 then
                                                                         o = e[f]
                                                                         t[o](d(t, o + 1, e[s]))
                                                                         l = l + 1; e = n[l];
-                                                                    else l = e[s]; end else
+                                                                    else
+                                                                        l = e[s];
+                                                                    end
+                                                                else
                                                                     t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                                end else if y >= -1 then repeat
+                                                                end
+                                                            else
+                                                                if y >= -1 then
+                                                                    repeat
                                                                         if y > 0 then
                                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l];
-                                                                    until true; else
+                                                                            [l];
+                                                                    until true;
+                                                                else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end end end
-                                                    until true; else
-                                                    local o; for y = 0, 4 do if 1 < y then if y >= 3 then if y < 4 then
+                                                                end
+                                                            end
+                                                        end
+                                                    until true;
+                                                else
+                                                    local o; for y = 0, 4 do
+                                                        if 1 < y then
+                                                            if y >= 3 then
+                                                                if y < 4 then
                                                                     o = e[f]
                                                                     t[o](d(t, o + 1, e[s]))
                                                                     l = l + 1; e = n[l];
-                                                                else l = e[s]; end else
+                                                                else
+                                                                    l = e[s];
+                                                                end
+                                                            else
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            end else if y >= -1 then repeat
+                                                            end
+                                                        else
+                                                            if y >= -1 then
+                                                                repeat
                                                                     if y > 0 then
                                                                         t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                until true; else
+                                                                until true;
+                                                            else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end end end
-                                                end end else if 24 > y then if (t[e[f]] == t[e[c]]) then l = l + 1; else l =
-                                                    e[s]; end; else if 24 < y then
-                                                    local y, r; for o = 0, 6 do if 2 >= o then if 1 <= o then if o >= -2 then for c = 13, 96 do
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if 24 > y then
+                                                if (t[e[f]] == t[e[c]]) then
+                                                    l = l + 1;
+                                                else
+                                                    l =
+                                                        e[s];
+                                                end;
+                                            else
+                                                if 24 < y then
+                                                    local y, r; for o = 0, 6 do
+                                                        if 2 >= o then
+                                                            if 1 <= o then
+                                                                if o >= -2 then
+                                                                    for c = 13, 96 do
                                                                         if o < 2 then
                                                                             t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                         end; t(e[f], e[s]); l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t(e[f], e[s]); l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t(e[f], e[s]); l = l + 1; e = n[l];
-                                                            end else if 4 >= o then if o ~= 0 then repeat
+                                                            end
+                                                        else
+                                                            if 4 >= o then
+                                                                if o ~= 0 then
+                                                                    repeat
                                                                         if o > 3 then
                                                                             y = e[f]; r = t[e[s]]; t[y + 1] = r; t[y] = r
-                                                                            [e[c]]; l = l + 1; e = n[l]; break;
+                                                                                [e[c]]; l = l + 1; e = n[l]; break;
                                                                         end; y = e[f]
                                                                         t[y](d(t, y + 1, e[s]))
                                                                         l = l + 1; e = n[l];
-                                                                    until true; else
+                                                                    until true;
+                                                                else
                                                                     y = e[f]; r = t[e[s]]; t[y + 1] = r; t[y] = r[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                end else if o ~= 3 then for c = 13, 70 do
+                                                                        l + 1; e = n[l];
+                                                                end
+                                                            else
+                                                                if o ~= 3 then
+                                                                    for c = 13, 70 do
                                                                         if o > 5 then
                                                                             y = e[f]
                                                                             t[y](d(t, y + 1, e[s]))
                                                                             break;
                                                                         end; t(e[f], e[s]); l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     y = e[f]
                                                                     t[y](d(t, y + 1, e[s]))
-                                                                end end end end
-                                                else t[e[f]] = t[e[s]] - t[e[c]]; end end end else if y <= 31 then if y < 30 then t[e[f]] =
-                                                o[e[s]]; else if y ~= 28 then for l = 18, 83 do
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                else
+                                                    t[e[f]] = t[e[s]] - t[e[c]];
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y <= 31 then
+                                            if y < 30 then
+                                                t[e[f]] =
+                                                    o[e[s]];
+                                            else
+                                                if y ~= 28 then
+                                                    for l = 18, 83 do
                                                         if 30 ~= y then
                                                             t[e[f]] = t[e[s]]; break;
                                                         end; t[e[f]] = t[e[s]] + e[c]; break;
-                                                    end; else t[e[f]] = t[e[s]]; end end else if 33 > y then
+                                                    end;
+                                                else
+                                                    t[e[f]] = t[e[s]];
+                                                end
+                                            end
+                                        else
+                                            if 33 > y then
                                                 local e = e[f]; do return t[e], t[e + 1] end
-                                            else if y ~= 33 then
+                                            else
+                                                if y ~= 33 then
                                                     local l = e[f]
                                                     local s = { t[l](t[l + 1]) }; local f = 0; for e = l, e[c] do
                                                         f = f + 1; t[e] = s[f];
                                                     end
                                                 else
                                                     local y, o; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]; o =
-                                                    t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
-                                                    t[e[s]][t[e[c]]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l +
-                                                    1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]
+                                                        t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t[e[f]] =
+                                                        t[e[s]][t[e[c]]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l =
+                                                        l +
+                                                        1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
-                                                end end end end end else if 10 >= y then if 4 >= y then if y <= 1 then if -1 < y then repeat
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                if 10 >= y then
+                                    if 4 >= y then
+                                        if y <= 1 then
+                                            if -1 < y then
+                                                repeat
                                                     if 0 ~= y then
                                                         if t[e[f]] then l = l + 1; else l = e[s]; end; break;
-                                                    end; local d, r; for y = 0, 6 do if 2 >= y then if 1 <= y then if 0 < y then for c = 16, 75 do
+                                                    end; local d, r; for y = 0, 6 do
+                                                        if 2 >= y then
+                                                            if 1 <= y then
+                                                                if 0 < y then
+                                                                    for c = 16, 75 do
                                                                         if y ~= 2 then
                                                                             t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                         end; d = e[f]
                                                                         t[d](t[d + 1])
                                                                         l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t(e[f], e[s]); l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end else if y > 4 then if 6 > y then
+                                                            end
+                                                        else
+                                                            if y > 4 then
+                                                                if 6 > y then
                                                                     d = e[f]; r = t[e[s]]; t[d + 1] = r; t[d] = r[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                else t(e[f], e[s]); end else if y > 1 then for c = 13, 68 do
+                                                                        l + 1; e = n[l];
+                                                                else
+                                                                    t(e[f], e[s]);
+                                                                end
+                                                            else
+                                                                if y > 1 then
+                                                                    for c = 13, 68 do
                                                                         if 4 ~= y then
                                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                    end; else
+                                                                    end;
+                                                                else
                                                                     t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                end end end end
-                                                until true; else
-                                                local d, r; for y = 0, 6 do if 2 >= y then if 1 <= y then if 0 < y then for c = 16, 75 do
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                until true;
+                                            else
+                                                local d, r; for y = 0, 6 do
+                                                    if 2 >= y then
+                                                        if 1 <= y then
+                                                            if 0 < y then
+                                                                for c = 16, 75 do
                                                                     if y ~= 2 then
                                                                         t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                     end; d = e[f]
                                                                     t[d](t[d + 1])
                                                                     l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t(e[f], e[s]); l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                        end else if y > 4 then if 6 > y then
+                                                        end
+                                                    else
+                                                        if y > 4 then
+                                                            if 6 > y then
                                                                 d = e[f]; r = t[e[s]]; t[d + 1] = r; t[d] = r[e[c]]; l =
-                                                                l + 1; e = n[l];
-                                                            else t(e[f], e[s]); end else if y > 1 then for c = 13, 68 do
+                                                                    l + 1; e = n[l];
+                                                            else
+                                                                t(e[f], e[s]);
+                                                            end
+                                                        else
+                                                            if y > 1 then
+                                                                for c = 13, 68 do
                                                                     if 4 ~= y then
                                                                         t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; break;
-                                                                end; else
+                                                                end;
+                                                            else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end end end end
-                                            end else if y >= 3 then if y < 4 then
-                                                    local d; for y = 0, 6 do if y < 3 then if y > 0 then if 1 == y then
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if y >= 3 then
+                                                if y < 4 then
+                                                    local d; for y = 0, 6 do
+                                                        if y < 3 then
+                                                            if y > 0 then
+                                                                if 1 == y then
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
-                                                                end else
+                                                                end
+                                                            else
                                                                 t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                            end else if 5 > y then if y == 4 then
+                                                            end
+                                                        else
+                                                            if 5 > y then
+                                                                if y == 4 then
                                                                     d = e[f]
                                                                     t[d](t[d + 1])
                                                                     l = l + 1; e = n[l];
                                                                 else
                                                                     t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                                end else if 2 ~= y then repeat
+                                                                end
+                                                            else
+                                                                if 2 ~= y then
+                                                                    repeat
                                                                         if y > 5 then
                                                                             t[e[f]] = t[e[s]][e[c]]; break;
                                                                         end; t[e[f]] = o[e[s]]; l = l + 1; e = n[l];
-                                                                    until true; else t[e[f]] = t[e[s]][e[c]]; end end end end
+                                                                    until true;
+                                                                else
+                                                                    t[e[f]] = t[e[s]][e[c]];
+                                                                end
+                                                            end
+                                                        end
+                                                    end
                                                 else
-                                                    local y, a; for h = 0, 6 do if 3 > h then if 0 < h then if h < 2 then
+                                                    local y, a; for h = 0, 6 do
+                                                        if 3 > h then
+                                                            if 0 < h then
+                                                                if h < 2 then
                                                                     y = e[f]
                                                                     t[y](d(t, y + 1, e[s]))
                                                                     l = l + 1; e = n[l];
                                                                 else
                                                                     y = e[f]; a = t[e[s]]; t[y + 1] = a; t[y] = a[e[c]]; l =
-                                                                    l + 1; e = n[l];
-                                                                end else
+                                                                        l + 1; e = n[l];
+                                                                end
+                                                            else
                                                                 t[e[f]] = t[e[s]]; l = l + 1; e = n[l];
-                                                            end else if 5 > h then if h > 2 then repeat
+                                                            end
+                                                        else
+                                                            if 5 > h then
+                                                                if h > 2 then
+                                                                    repeat
                                                                         if 4 > h then
                                                                             t[e[f]] = r[e[s]]; l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                                        [l];
-                                                                    until true; else
+                                                                            [l];
+                                                                    until true;
+                                                                else
                                                                     t[e[f]] = r[e[s]]; l = l + 1; e = n[l];
-                                                                end else if 1 <= h then repeat
+                                                                end
+                                                            else
+                                                                if 1 <= h then
+                                                                    repeat
                                                                         if h ~= 6 then
                                                                             y = e[f]
                                                                             t[y] = t[y](d(t, y + 1, e[s]))
                                                                             l = l + 1; e = n[l]; break;
                                                                         end; t[e[f]] = o[e[s]];
-                                                                    until true; else t[e[f]] = o[e[s]]; end end end end
-                                                end else
+                                                                    until true;
+                                                                else
+                                                                    t[e[f]] = o[e[s]];
+                                                                end
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            else
                                                 local y, o; y = e[f]; o = t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l +
-                                                1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]] /
-                                                t[e[c]]; l = l + 1; e = n[l]; y = e[f]
+                                                    1; e = n[l]; t[e[f]] = t[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
+                                                    [e[s]] /
+                                                    t[e[c]]; l = l + 1; e = n[l]; y = e[f]
                                                 t[y] = t[y](d(t, y + 1, e[s]))
                                                 l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]][e[s]] =
-                                                t[e[c]];
-                                            end end else if 7 >= y then if y < 6 then
+                                                    t[e[c]];
+                                            end
+                                        end
+                                    else
+                                        if 7 >= y then
+                                            if y < 6 then
                                                 local y, d; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]]
-                                                [e[c]]; l = l + 1; e = n[l]; y = e[f]
+                                                    [e[c]]; l = l + 1; e = n[l]; y = e[f]
                                                 t[y] = t[y](t[y + 1])
                                                 l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e
-                                                [f]
+                                                    [f]
                                                 t[y] = t[y]()
                                                 l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e
-                                                [f]; d = t[e[s]]; t[y + 1] = d; t[y] = d[e[c]];
-                                            else if y >= 4 then for l = 40, 93 do
+                                                    [f]; d = t[e[s]]; t[y + 1] = d; t[y] = d[e[c]];
+                                            else
+                                                if y >= 4 then
+                                                    for l = 40, 93 do
                                                         if 6 ~= y then
                                                             t[e[f]] = t[e[s]] / e[c]; break;
                                                         end; t[e[f]] = t[e[s]] - e[c]; break;
-                                                    end; else t[e[f]] = t[e[s]] / e[c]; end end else if y > 8 then if y < 10 then
+                                                    end;
+                                                else
+                                                    t[e[f]] = t[e[s]] / e[c];
+                                                end
+                                            end
+                                        else
+                                            if y > 8 then
+                                                if y < 10 then
                                                     local y, o; y = e[f]
                                                     t[y] = t[y](d(t, y + 1, e[s]))
                                                     l = l + 1; e = n[l]; r[e[s]] = t[e[f]]; l = l + 1; e = n[l]; y = e
-                                                    [f]; o = t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n[l]; t(
-                                                    e[f], e[s]); l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n[l]; t(
-                                                    e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
+                                                        [f]; o = t[e[s]]; t[y + 1] = o; t[y] = o[e[c]]; l = l + 1; e = n
+                                                    [l]; t(
+                                                        e[f], e[s]); l = l + 1; e = n[l]; t(e[f], e[s]); l = l + 1; e = n
+                                                    [l]; t(
+                                                        e[f], e[s]); l = l + 1; e = n[l]; y = e[f]
                                                     t[y](d(t, y + 1, e[s]))
                                                 else
                                                     local l = e[f]
                                                     local s = { t[l](d(t, l + 1, h)) }; local f = 0; for e = l, e[c] do
                                                         f = f + 1; t[e] = s[f];
                                                     end
-                                                end else
+                                                end
+                                            else
                                                 local y, h, d; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e[f]
                                                 t[y](t[y + 1])
                                                 l = l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = r
-                                                [e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n
-                                                [l]; y = e[f]
+                                                    [e[s]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e =
+                                                    n
+                                                    [l]; y = e[f]
                                                 h = { t[y](t[y + 1]) }; d = 0; for e = y, e[c] do
                                                     d = d + 1; t[e] = h[d];
                                                 end
                                                 l = l + 1; e = n[l]; l = e[s];
-                                            end end end else if y < 17 then if 14 > y then if y <= 11 then t[e[f]] = p(
-                                                _[e[s]], nil, o); else if 12 ~= y then
+                                            end
+                                        end
+                                    end
+                                else
+                                    if y < 17 then
+                                        if 14 > y then
+                                            if y <= 11 then
+                                                t[e[f]] = p(
+                                                    _[e[s]], nil, o);
+                                            else
+                                                if 12 ~= y then
                                                     local e = e[f]
                                                     t[e] = t[e](t[e + 1])
                                                 else
-                                                    local n = t[e[c]]; if not n then l = l + 1; else
+                                                    local n = t[e[c]]; if not n then
+                                                        l = l + 1;
+                                                    else
                                                         t[e[f]] = n; l = e[s];
                                                     end;
-                                                end end else if y < 15 then
-                                                local o; for y = 0, 6 do if 2 < y then if y <= 4 then if y > 1 then for d = 12, 86 do
+                                                end
+                                            end
+                                        else
+                                            if y < 15 then
+                                                local o; for y = 0, 6 do
+                                                    if 2 < y then
+                                                        if y <= 4 then
+                                                            if y > 1 then
+                                                                for d = 12, 86 do
                                                                     if 3 < y then
                                                                         t(e[f], e[s]); l = l + 1; e = n[l]; break;
                                                                     end; t[e[f]] = t[e[s]] / t[e[c]]; l = l + 1; e = n
-                                                                    [l]; break;
-                                                                end; else
+                                                                        [l]; break;
+                                                                end;
+                                                            else
                                                                 t(e[f], e[s]); l = l + 1; e = n[l];
-                                                            end else if y > 2 then repeat
+                                                            end
+                                                        else
+                                                            if y > 2 then
+                                                                repeat
                                                                     if y ~= 5 then
                                                                         t[e[f]][e[s]] = t[e[c]]; break;
                                                                     end; o = e[f]
                                                                     t[o] = t[o](d(t, o + 1, e[s]))
                                                                     l = l + 1; e = n[l];
-                                                                until true; else t[e[f]][e[s]] = t[e[c]]; end end else if y > 0 then if y == 2 then
+                                                                until true;
+                                                            else
+                                                                t[e[f]][e[s]] = t[e[c]];
+                                                            end
+                                                        end
+                                                    else
+                                                        if y > 0 then
+                                                            if y == 2 then
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
                                                             else
                                                                 t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                            end else
+                                                            end
+                                                        else
                                                             t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l];
-                                                        end end end
-                                            else if y ~= 12 then for l = 47, 91 do
+                                                        end
+                                                    end
+                                                end
+                                            else
+                                                if y ~= 12 then
+                                                    for l = 47, 91 do
                                                         if y > 15 then
                                                             t[e[f]][e[s]] = e[c]; break;
                                                         end; t[e[f]] = (e[s] ~= 0); break;
-                                                    end; else t[e[f]] = (e[s] ~= 0); end end end else if y <= 19 then if y >= 18 then if 15 < y then for d = 16, 85 do
+                                                    end;
+                                                else
+                                                    t[e[f]] = (e[s] ~= 0);
+                                                end
+                                            end
+                                        end
+                                    else
+                                        if y <= 19 then
+                                            if y >= 18 then
+                                                if 15 < y then
+                                                    for d = 16, 85 do
                                                         if 19 > y then
                                                             local y; t[e[f]] = t[e[s]][e[c]]; l = l + 1; e = n[l]; y = e
-                                                            [f]
+                                                                [f]
                                                             t[y] = t[y]()
                                                             l = l + 1; e = n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e =
-                                                            n[l]; do return t[e[f]] end
+                                                                n[l]; do return t[e[f]] end
                                                             l = l + 1; e = n[l]; do return end; break;
                                                         end; if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end; break;
-                                                    end; else if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end; end else
+                                                    end;
+                                                else
+                                                    if (t[e[f]] == e[c]) then l = l + 1; else l = e[s]; end;
+                                                end
+                                            else
                                                 local e = e[f]
                                                 t[e] = t[e]()
-                                            end else if y > 20 then if y >= 17 then for l = 31, 55 do
+                                            end
+                                        else
+                                            if y > 20 then
+                                                if y >= 17 then
+                                                    for l = 31, 55 do
                                                         if 21 ~= y then
                                                             local c, n, o, y, d; local l = 0; while l > -1 do
-                                                                if l < 3 then if 1 > l then c = e; else if l >= -2 then repeat
+                                                                if l < 3 then
+                                                                    if 1 > l then
+                                                                        c = e;
+                                                                    else
+                                                                        if l >= -2 then
+                                                                            repeat
                                                                                 if 2 ~= l then
                                                                                     n = f; break;
                                                                                 end; o = s;
-                                                                            until true; else n = f; end end else if l < 5 then if 4 > l then y =
-                                                                            c[o]; else d = c[n]; end else if 2 ~= l then for e = 17, 85 do
+                                                                            until true;
+                                                                        else
+                                                                            n = f;
+                                                                        end
+                                                                    end
+                                                                else
+                                                                    if l < 5 then
+                                                                        if 4 > l then
+                                                                            y =
+                                                                                c[o];
+                                                                        else
+                                                                            d = c[n];
+                                                                        end
+                                                                    else
+                                                                        if 2 ~= l then
+                                                                            for e = 17, 85 do
                                                                                 if l < 6 then
                                                                                     t(d, y); break;
                                                                                 end; l = -2; break;
-                                                                            end; else t(d, y); end end end
+                                                                            end;
+                                                                        else
+                                                                            t(d, y);
+                                                                        end
+                                                                    end
+                                                                end
                                                                 l = l + 1
                                                             end
                                                             break;
@@ -1899,19 +3586,28 @@
                                                         local l = 0; for e = e, h do
                                                             l = l + 1; t[e] = f[l];
                                                         end; break;
-                                                    end; else
+                                                    end;
+                                                else
                                                     local e = e[f]
                                                     local f, l = u(t[e](t[e + 1]))
                                                     h = l + e - 1
                                                     local l = 0; for e = e, h do
                                                         l = l + 1; t[e] = f[l];
                                                     end;
-                                                end else
+                                                end
+                                            else
                                                 t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]] = {}; l = l + 1; e =
-                                                n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e[c]; l =
-                                                l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
-                                                [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]];
-                                            end end end end end end end
+                                                    n[l]; t[e[f]][e[s]] = t[e[c]]; l = l + 1; e = n[l]; t[e[f]][e[s]] = e
+                                                [c]; l =
+                                                    l + 1; e = n[l]; t[e[f]] = o[e[s]]; l = l + 1; e = n[l]; t[e[f]] = t
+                                                    [e[s]][e[c]]; l = l + 1; e = n[l]; t[e[f]] = t[e[s]][e[c]];
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
                     l = 1 + l;
                 end;
             end; return fe
@@ -1924,117 +3620,172 @@
                 c = c + 1
                 e = (e + 0x908 - y) % 0x4f
                 return (e % 0x03 == 0x1 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0x85);
-                    end
-                    return true
-                end) 'WPfmc' and t[0x3](0x23a + y)) or
-                (e % 0x03 == 0x0 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0x8b); s = { s .. '\58 a', s }; o[n] = te(); n = n + ((not a.raJOdHTU) and 1 or 0); s[1] =
-                        '\58' .. s[1]; f[2] = 0xff;
-                    end
-                    return true
-                end) 'RUZ_p' and t[0x2](y + 0x1a3)) or
-                (e % 0x03 == 0x2 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0xe1);
-                    end
-                    return true
-                end) 'RzEfS' and t[0x1](y + 0x68)) or y
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0x85);
+                        end
+                        return true
+                    end) 'WPfmc' and t[0x3](0x23a + y)) or
+                    (e % 0x03 == 0x0 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0x8b); s = { s .. '\58 a', s }; o[n] = te(); n = n + ((not a.raJOdHTU) and 1 or 0); s[1] =
+                                '\58' .. s[1]; f[2] = 0xff;
+                        end
+                        return true
+                    end) 'RUZ_p' and t[0x2](y + 0x1a3)) or
+                    (e % 0x03 == 0x2 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0xe1);
+                        end
+                        return true
+                    end) 'RzEfS' and t[0x1](y + 0x68)) or y
             end), (function(y)
                 if c > 0x26 then return y end
                 c = c + 1
                 e = (e + 0x7db - y) % 0x4c
                 return (e % 0x03 == 0x1 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0xcc);
-                    end
-                    return true
-                end) 'IebXH' and t[0x2](0x3af + y)) or
-                (e % 0x03 == 0x0 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0x77); s = '\37'; f = { function() f() end }; s = s .. '\100\43';
-                    end
-                    return true
-                end) 'WpSjW' and t[0x1](y + 0xbf)) or
-                (e % 0x03 == 0x2 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0x4e); f[2] = (f[2] * (fe(function() o() end, d(s)) - fe(f[1], d(s)))) + 1; o[n] = {}; f =
-                        f[2]; n = n + f;
-                    end
-                    return true
-                end) 'Cwgrx' and t[0x3](y + 0x262)) or y
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0xcc);
+                        end
+                        return true
+                    end) 'IebXH' and t[0x2](0x3af + y)) or
+                    (e % 0x03 == 0x0 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0x77); s = '\37'; f = { function() f() end }; s = s .. '\100\43';
+                        end
+                        return true
+                    end) 'WpSjW' and t[0x1](y + 0xbf)) or
+                    (e % 0x03 == 0x2 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0x4e); f[2] = (f[2] * (fe(function() o() end, d(s)) - fe(f[1], d(s)))) + 1; o[n] = {}; f =
+                                f[2]; n = n + f;
+                        end
+                        return true
+                    end) 'Cwgrx' and t[0x3](y + 0x262)) or y
             end), (function(s)
                 if c > 0x20 then return s end
                 c = c + 1
                 e = (e + 0x543 - s) % 0x41
                 return (e % 0x03 == 0x1 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0xd5);
-                    end
-                    return true
-                end) 'GsPch' and t[0x3](0x357 + s)) or
-                (e % 0x03 == 0x0 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0xc5);
-                    end
-                    return true
-                end) 'GIV_V' and t[0x2](s + 0x1b2)) or
-                (e % 0x03 == 0x2 and (function(t)
-                    if not l[t] then
-                        e = e + 0x01
-                        l[t] = (0xa9); o[n] = se(); n = n + f;
-                    end
-                    return true
-                end) 'bmCKQ' and t[0x1](s + 0x271)) or s
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0xd5);
+                        end
+                        return true
+                    end) 'GsPch' and t[0x3](0x357 + s)) or
+                    (e % 0x03 == 0x0 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0xc5);
+                        end
+                        return true
+                    end) 'GIV_V' and t[0x2](s + 0x1b2)) or
+                    (e % 0x03 == 0x2 and (function(t)
+                        if not l[t] then
+                            e = e + 0x01
+                            l[t] = (0xa9); o[n] = se(); n = n + f;
+                        end
+                        return true
+                    end) 'bmCKQ' and t[0x1](s + 0x271)) or s
             end) }
             t[0x2](0x26e3)
         end) {}; local e = p(d(o)); return e(...);
     end
     return fe(
-    (function()
-        local l = {}
-        local e = 0x01; local t; if a.raJOdHTU then t = a.raJOdHTU(fe) else t = '' end
-        if a.lSkeCUEZ(t, a.KdyvMrak) then e = e + 0; else e = e + 1; end
-        l[e] = 0x02; l[l[e] + 0x01] = 0x03; return l;
-    end)(), ...)
+        (function()
+            local l = {}
+            local e = 0x01; local t; if a.raJOdHTU then t = a.raJOdHTU(fe) else t = '' end
+            if a.lSkeCUEZ(t, a.KdyvMrak) then e = e + 0; else e = e + 1; end
+            l[e] = 0x02; l[l[e] + 0x01] = 0x03; return l;
+        end)(), ...)
 end)(
-(function(t, e, l, f, s, n)
-    local n; if 4 > t then if 2 > t then if -1 ~= t then for n = 30, 74 do
-                    if 1 ~= t then
-                        do return e(1), e(4, s, f, l, e), e(5, s, f, l) end; break;
-                    end; do return function(l, e, t) if t then
-                                local e = (l / 2 ^ (e - 1)) % 2 ^ ((t - 1) - (e - 1) + 1); return e - e % 1;
-                            else
-                                local e = 2 ^ (e - 1); return (l % (e + e) >= e) and 1 or 0;
-                            end; end; end; break;
-                end; else do return e(1), e(4, s, f, l, e), e(5, s, f, l) end; end else if t >= -1 then repeat
-                    if t > 2 then
-                        do return e(1), e(4, s, f, l, e), e(5, s, f, l) end; break;
-                    end; do return 16777216, 65536, 256 end;
-                until true; else do return 16777216, 65536, 256 end; end end else if t >= 6 then if t >= 7 then if 7 < t then do return
-                        l(t, nil, l); end else do return setmetatable({},
-                            { ['__\99\97\108\108'] = function(e, f, t, s, l) if l then return e[l] elseif s then return e else e[f] =
-                                    t end end }) end end else do return s[l] end; end else if 1 < t then for n = 16, 77 do
-                    if t > 4 then
-                        local t = f; do return function()
-                                local e = e(l, t(t, t), t(t, t)); t(1); return e;
-                            end; end; break;
-                    end; local t = f; local f, s, n = s(2); do return function()
-                            local c, y, l, e = e(l, t(t, t), t(t, t) + 3); t(4); return (e * f) + (l * s) + (y * n) + c;
-                        end; end; break;
-                end; else
-                local t = f; do return function()
-                        local e = e(l, t(t, t), t(t, t)); t(1); return e;
-                    end; end;
-            end end end
-end), ...)
+    (function(t, e, l, f, s, n)
+        local n; if 4 > t then
+            if 2 > t then
+                if -1 ~= t then
+                    for n = 30, 74 do
+                        if 1 ~= t then
+                            do return e(1), e(4, s, f, l, e), e(5, s, f, l) end; break;
+                        end; do
+                            return function(l, e, t)
+                                if t then
+                                    local e = (l / 2 ^ (e - 1)) % 2 ^ ((t - 1) - (e - 1) + 1); return e - e % 1;
+                                else
+                                    local e = 2 ^ (e - 1); return (l % (e + e) >= e) and 1 or 0;
+                                end;
+                            end;
+                        end; break;
+                    end;
+                else
+                    do return e(1), e(4, s, f, l, e), e(5, s, f, l) end;
+                end
+            else
+                if t >= -1 then
+                    repeat
+                        if t > 2 then
+                            do return e(1), e(4, s, f, l, e), e(5, s, f, l) end; break;
+                        end; do return 16777216, 65536, 256 end;
+                    until true;
+                else
+                    do return 16777216, 65536, 256 end;
+                end
+            end
+        else
+            if t >= 6 then
+                if t >= 7 then
+                    if 7 < t then
+                        do
+                            return
+                                l(t, nil, l);
+                        end
+                    else
+                        do
+                            return setmetatable({},
+                                {
+                                    ['__\99\97\108\108'] = function(e, f, t, s, l)
+                                        if l then
+                                            return e[l]
+                                        elseif s then
+                                            return e
+                                        else
+                                            e[f] =
+                                                t
+                                        end
+                                    end
+                                })
+                        end
+                    end
+                else
+                    do return s[l] end;
+                end
+            else
+                if 1 < t then
+                    for n = 16, 77 do
+                        if t > 4 then
+                            local t = f; do
+                                return function()
+                                    local e = e(l, t(t, t), t(t, t)); t(1); return e;
+                                end;
+                            end; break;
+                        end; local t = f; local f, s, n = s(2); do
+                            return function()
+                                local c, y, l, e = e(l, t(t, t), t(t, t) + 3); t(4); return (e * f) + (l * s) + (y * n) +
+                                c;
+                            end;
+                        end; break;
+                    end;
+                else
+                    local t = f; do
+                        return function()
+                            local e = e(l, t(t, t), t(t, t)); t(1); return e;
+                        end;
+                    end;
+                end
+            end
+        end
+    end), ...)

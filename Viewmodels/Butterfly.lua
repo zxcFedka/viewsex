@@ -22,7 +22,6 @@ local function createModel()
         Motor6D2 = Instance.new("Motor6D")
         Motor6D3 = Instance.new("Motor6D")
         MeshPart4 = Instance.new("MeshPart")
-        print(MeshPart4) -- camera
         StringValue5 = Instance.new("StringValue")
         Part6 = Instance.new("Part")
         Motor6D7 = Instance.new("Motor6D")
@@ -36,10 +35,26 @@ local function createModel()
         --MeshPart11 = Instance.new("MeshPart")
         local AssetService = game:GetService("AssetService")
 
+        --local SurfaceAppearance = AssetService:CreateSurfaceAppearanceAsync({ColorMap = "rbxassetid://113873344348736"})
+
+        --local SurfaceAppearance1 = SurfaceAppearance:Clone()
+        --local SurfaceAppearance2 = SurfaceAppearance:Clone()
+        --local SurfaceAppearance3 = SurfaceAppearance:Clone()
+        --local SurfaceAppearance4 = SurfaceAppearance:Clone()
+        --local colorMapImage = AssetService:CreateEditableImageAsync(Content.fromUri("rbxassetid://113873344348736"))
+        --local aImage = AssetService:CreateEditableImageAsync(Content.fromUri("rbxassetid://113873344348736"))
+        --local colorMapImage = AssetService:CreateEditableImageAsync(Content.fromUri("rbxassetid://113873344348736"))
+        --local colorMapImage = AssetService:CreateEditableImageAsync(Content.fromUri("rbxassetid://113873344348736"))
+
         local MeshPart11 = AssetService:CreateMeshPartAsync("rbxassetid://72603454306746")
         local MeshPart12 = AssetService:CreateMeshPartAsync("rbxassetid://96270614929225")
         local MeshPart13 = AssetService:CreateMeshPartAsync("rbxassetid://134455370296521")
         local MeshPart14 = AssetService:CreateMeshPartAsync("rbxassetid://106968529019861")
+        MeshPart11.TextureID = "rbxassetid://113873344348736"
+        MeshPart12.TextureID = "rbxassetid://113873344348736"
+        MeshPart13.TextureID = "rbxassetid://113873344348736"
+        MeshPart14.TextureID = "rbxassetid://113873344348736"
+
         --MeshPart11.MeshId = "rbxassetid://72603454306746"
         --MeshPart11.MeshContent = "rbxassetid://72603454306746"
 
